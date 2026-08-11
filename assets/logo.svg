@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  VakeelSathi "Nyaya-V" mark.
+  The V of VakeelSathi doubles as the column of a balance scale.
+  Brand colors: indigo #1A237E (structure), saffron #F57C00 (pans/pivot).
+  This file is the master vector — keep it in sync with
+  lib/widgets/brand_logo.dart (NyayaVPainter).
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96">
+  <line x1="16" y1="30" x2="80" y2="30" stroke="#1A237E" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="48" cy="19" r="4.5" fill="#F57C00"/>
+  <path d="M27 36 L48 82 L69 36" fill="none" stroke="#1A237E" stroke-width="10"
+        stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="16" y1="33" x2="16" y2="44" stroke="#1A237E" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="80" y1="33" x2="80" y2="44" stroke="#1A237E" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M5 45 A11 11 0 0 0 27 45 Z" fill="#F57C00"/>
+  <path d="M69 45 A11 11 0 0 0 91 45 Z" fill="#F57C00"/>
+</svg>
