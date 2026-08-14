@@ -40,15 +40,14 @@
         }
 
         .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary);
+            display: flex;
+            align-items: center;
         }
 
-        .logo sup {
-            font-size: 12px;
-            margin-left: 2px;
-            vertical-align: super;
+        .logo-img {
+            height: 40px;
+            width: auto;
+            max-height: 50px;
         }
 
         .coming-soon-badge {
@@ -377,7 +376,9 @@
 <body>
     <!-- Navigation -->
     <nav>
-        <div class="logo">VakeelSathi<sup>™</sup></div>
+        <div class="logo">
+            <img src="assets/logo.svg" alt="VakeelSathi" class="logo-img">
+        </div>
         <div class="coming-soon-badge">Coming Soon</div>
     </nav>
 
