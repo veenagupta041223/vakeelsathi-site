@@ -62,14 +62,57 @@ body {
 .hero {
   background: var(--indigo);
   color: #fff;
-  padding: 72px 0 64px;
+  padding: 56px 0;
   text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    padding: 72px 0 64px;
+  }
+
+  .hero .hero-content {
+    text-align: left;
+    align-items: flex-start;
+  }
 }
 
 .hero-inner {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 32px;
+}
+
+@media (min-width: 1024px) {
+  .hero-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: var(--radius);
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+@media (min-width: 1024px) {
+  .hero-image {
+    max-width: 350px;
+    width: 100%;
+  }
 }
 
 .hero-logo {
@@ -103,6 +146,12 @@ body {
   max-width: 560px;
   margin: 0 auto 32px;
   opacity: 0.95;
+}
+
+@media (min-width: 1024px) {
+  .pitch {
+    margin: 0 0 32px;
+  }
 }
 
 .why,
