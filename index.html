@@ -42,12 +42,23 @@
         .logo {
             display: flex;
             align-items: center;
-            min-width: 50px;
+            gap: 12px;
+        }
+
+        .logo-text {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .logo-text sup {
+            font-size: 10px;
+            margin-left: 2px;
         }
 
         .logo-img {
-            height: 50px;
-            width: 50px;
+            height: 45px;
+            width: 45px;
             display: block;
         }
 
@@ -378,6 +389,7 @@
     <!-- Navigation -->
     <nav>
         <div class="logo">
+            <span class="logo-text">VakeelSathi<sup>™</sup></span>
             <img src="assets/logo.svg" alt="VakeelSathi" class="logo-img">
         </div>
         <div class="coming-soon-badge">Coming Soon</div>
