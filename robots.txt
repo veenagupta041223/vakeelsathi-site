@@ -1,0 +1,20 @@
+# VakeelSathi - Robots.txt
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+Disallow:
+
+# Specific rules for different crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Crawl delay to be respectful to server
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://www.vakeelsathi.in/sitemap.xml
+Sitemap: https://vakeelsathi.in/sitemap.xml
