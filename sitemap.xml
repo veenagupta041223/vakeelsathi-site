@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <!-- Homepage -->
     <url>
-        <loc>https://www.vakeelsathi.in/</loc>
+        <loc>https://vakeelsathi.in/</loc>
         <lastmod>2026-08-15</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
@@ -10,7 +10,7 @@
 
     <!-- Privacy Policy -->
     <url>
-        <loc>https://www.vakeelsathi.in/privacy.html</loc>
+        <loc>https://vakeelsathi.in/privacy.html</loc>
         <lastmod>2026-08-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
@@ -18,7 +18,7 @@
 
     <!-- Terms of Service -->
     <url>
-        <loc>https://www.vakeelsathi.in/terms.html</loc>
+        <loc>https://vakeelsathi.in/terms.html</loc>
         <lastmod>2026-08-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
