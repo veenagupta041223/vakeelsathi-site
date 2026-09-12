@@ -113,6 +113,8 @@
     <div class="modal-overlay" id="query-modal" hidden>
         <div class="hero-form-card modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
             <button type="button" class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+
+            <div id="modal-form-view">
             <h2 id="modal-title">Have a Query? Let Us Know</h2>
             <p class="services-intro">Tell us what you need help with — our team will review your request and get in touch with you directly.</p>
 
@@ -178,6 +180,13 @@
 
                 <button type="submit" class="btn" id="submit-btn">Submit Request</button>
             </form>
+            </div>
+
+            <div id="modal-success-view" hidden>
+                <h2>We've got your request</h2>
+                <p class="services-intro">Thanks for reaching out — our team will review your request and get in touch with you directly.</p>
+                <button type="button" class="btn" id="modal-success-close">Close</button>
+            </div>
         </div>
     </div>
 
@@ -481,6 +490,11 @@
         function closeModal() {
             queryModal.hidden = true;
             document.body.classList.remove("modal-open");
+            // Reset to the form view and clear it, ready for the next open.
+            document.getElementById("modal-success-view").hidden = true;
+            document.getElementById("modal-form-view").hidden = false;
+            form.reset();
+            clearError();
         }
 
         document.querySelectorAll(".service-card").forEach((card) => {
@@ -490,6 +504,7 @@
         });
 
         modalClose.addEventListener("click", closeModal);
+        document.getElementById("modal-success-close").addEventListener("click", closeModal);
 
         queryModal.addEventListener("click", (event) => {
             if (event.target === queryModal) closeModal();
@@ -554,7 +569,8 @@
                 const data = await response.json();
 
                 if (response.ok && data.ok) {
-                    window.location.href = "thank-you.html";
+                    document.getElementById("modal-form-view").hidden = true;
+                    document.getElementById("modal-success-view").hidden = false;
                     return;
                 }
 
