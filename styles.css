@@ -86,13 +86,13 @@ nav {
 
 /* Hero Section */
 .hero {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 56px;
-    align-items: start;
     padding: 72px 40px 64px;
     max-width: 1180px;
     margin: 0 auto;
+}
+
+.hero-content {
+    max-width: 640px;
 }
 
 .hero-content h1 {
@@ -114,6 +114,55 @@ nav {
     border: 1px solid var(--rule);
     border-radius: calc(var(--radius) + 6px);
     padding: 32px;
+}
+
+/* Query modal */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(30, 34, 102, 0.55);
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    overflow-y: auto;
+    z-index: 100;
+}
+
+.modal-overlay[hidden] {
+    display: none;
+}
+
+.modal-box {
+    max-width: 520px;
+    width: 100%;
+    height: fit-content;
+    margin: auto 0;
+    position: relative;
+}
+
+.modal-box h2 {
+    padding-right: 28px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    line-height: 1;
+    color: var(--ink-muted);
+    cursor: pointer;
+    padding: 4px 8px;
+}
+
+.modal-close:hover {
+    color: var(--ink);
+}
+
+body.modal-open {
+    overflow: hidden;
 }
 
 .hero-form-card h2 {
@@ -598,7 +647,6 @@ footer a:hover {
     }
 
     .hero {
-        grid-template-columns: 1fr;
         padding: 48px 20px 56px;
     }
 
@@ -613,6 +661,10 @@ footer a:hover {
 
     .hero-form-card {
         padding: 24px;
+    }
+
+    .modal-overlay {
+        padding: 20px 16px;
     }
 
     .docket-row {
