@@ -1,0 +1,28 @@
+name = "vakeelsathi-leads"
+main = "src/index.ts"
+compatibility_date = "2026-08-26"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "vakeelsathi_leads"
+database_id = "3bf96b6f-651c-43aa-8821-c63551b43cdd"
+
+# Sends the lead-notification email via the Resend API (DNS for vakeelsathi.in
+# is on GoDaddy, not Cloudflare, so the native send_email binding isn't
+# available). Set the key with: wrangler secret put RESEND_API_KEY
+# The sending domain (vakeelsathi.in) must be verified in Resend first —
+# add the SPF/DKIM records Resend gives you to GoDaddy's DNS.
+
+# Caps /submit to 5 requests/minute per client IP so a script can't flood
+# the inbox or the leads table.
+[[unsafe.bindings]]
+name = "RATE_LIMITER"
+type = "ratelimit"
+namespace_id = "1001"
+
+[unsafe.bindings.simple]
+limit = 5
+period = 60
+
+[vars]
+ALLOWED_ORIGIN = "https://vakeelsathi.in"
