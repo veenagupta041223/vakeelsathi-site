@@ -12,79 +12,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Zilla+Slab:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --ink: #1E2266;
-            --ink-light: #4B4FA6;
-            --ink-muted: #55586E;
-            --paper: #F6F7FA;
-            --panel: #EFF1F7;
-            --rule: #D6D9E3;
-            --stamp: #F5821F;
-            --stamp-dark: #B85A0E;
-            --brass: #1E2266;
-            --radius: 4px;
-        }
-
-        body {
-            font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: var(--ink);
-            line-height: 1.65;
-            background-color: var(--paper);
-        }
-
-        h1, h2 {
-            font-family: 'Zilla Slab', Georgia, serif;
-            color: var(--ink);
-            font-weight: 700;
-            line-height: 1.15;
-        }
-
-        /* Navigation */
-        nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 18px 40px;
-            background: linear-gradient(135deg, var(--ink) 0%, var(--ink-light) 100%);
-            position: relative;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo-text {
-            font-family: 'Zilla Slab', serif;
-            font-size: 21px;
-            font-weight: 700;
-            color: #FFFFFF;
-        }
-
-        .logo-text sup {
-            font-family: 'IBM Plex Sans', sans-serif;
-            font-size: 10px;
-            margin-left: 2px;
-            color: #FFFFFF;
-        }
-
-        .logo-img {
-            height: 42px;
-            width: 42px;
-            display: block;
-            background: #FFFFFF;
-            border-radius: 50%;
-            padding: 5px;
-        }
-
         /* Confirmation panel */
         .confirmation {
             max-width: 560px;
@@ -152,32 +81,7 @@
             margin-bottom: 32px;
         }
 
-        .btn {
-            background: var(--stamp);
-            color: var(--ink);
-            padding: 15px 30px;
-            border-radius: var(--radius);
-            font-weight: 600;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            font-family: inherit;
-            transition: background-color 0.2s ease;
-            display: inline-block;
-            text-decoration: none;
-        }
-
-        .btn:hover {
-            background: var(--stamp-dark);
-        }
-
         @media (max-width: 768px) {
-            nav {
-                padding: 15px 20px;
-                flex-direction: column;
-                gap: 10px;
-            }
-
             .confirmation {
                 padding: 56px 20px;
             }
@@ -185,38 +89,6 @@
             .confirmation h1 {
                 font-size: 26px;
             }
-        }
-
-        /* Footer */
-        footer {
-            background: var(--ink);
-            color: var(--paper);
-            padding: 28px 40px;
-            margin-top: 56px;
-        }
-
-        .footer-inner {
-            max-width: 1180px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px 24px;
-        }
-
-        footer p {
-            margin-bottom: 0;
-            color: #B7BAE0;
-        }
-
-        footer a {
-            color: var(--stamp);
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
         }
     </style>
 </head>
@@ -241,13 +113,34 @@
 
     <!-- Footer -->
     <footer>
-        <div class="footer-inner">
-            <p>© 2026 VakeelSathi. Made in India. आपका कानूनी साथी</p>
-            <p>
-                <a href="privacy.html">Privacy Policy</a> |
-                <a href="terms.html">Terms of Service</a> |
-                support@vakeelsathi.in
-            </p>
+        <div class="footer-grid">
+            <div class="footer-col footer-brand">
+                <span class="logo-text">VakeelSathi<sup>™</sup></span>
+                <p>Connecting you with verified lawyers across India. आपका कानूनी साथी</p>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="index.html#legal-notices">Legal Notices &amp; Recovery</a></li>
+                    <li><a href="index.html#property">Property &amp; Real Estate</a></li>
+                    <li><a href="index.html#family">Family &amp; Personal</a></li>
+                    <li><a href="index.html#business">Business &amp; Startup</a></li>
+                    <li><a href="index.html#registrations">Registrations &amp; Compliance</a></li>
+                    <li><a href="index.html#disputes">Consumer &amp; Traffic Disputes</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="https://www.instagram.com/vakeel_sathii?igsh=MW1pNGJ2YWFrb3RhYw==" target="_blank">Instagram</a></li>
+                    <li><a href="mailto:support@vakeelsathi.in">support@vakeelsathi.in</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 VakeelSathi. Made in India.</p>
         </div>
     </footer>
 </body>
