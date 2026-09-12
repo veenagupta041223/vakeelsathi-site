@@ -84,31 +84,6 @@ nav {
     font-weight: 600;
 }
 
-/* Hero Section */
-.hero {
-    padding: 72px 40px 64px;
-    max-width: 1180px;
-    margin: 0 auto;
-}
-
-.hero-content {
-    max-width: 640px;
-}
-
-.hero-content h1 {
-    font-size: 46px;
-    letter-spacing: -0.5px;
-    margin-bottom: 20px;
-}
-
-.hero-content p {
-    font-size: 17px;
-    line-height: 1.7;
-    color: var(--ink-muted);
-    margin-bottom: 16px;
-    max-width: 46ch;
-}
-
 .hero-form-card {
     background: var(--panel);
     border: 1px solid var(--rule);
@@ -170,27 +145,6 @@ body.modal-open {
     margin-bottom: 14px;
 }
 
-.docket-row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 24px;
-    border-top: 1px solid var(--rule);
-    border-bottom: 1px solid var(--rule);
-}
-
-.docket-item {
-    padding: 14px 24px 14px 0;
-    margin-right: 24px;
-    border-right: 1px solid var(--rule);
-    font-weight: 600;
-    font-size: 15px;
-}
-
-.docket-item:last-child {
-    border-right: none;
-    margin-right: 0;
-}
-
 /* Buttons */
 .btn {
     background: var(--stamp);
@@ -210,21 +164,6 @@ body.modal-open {
 
 .btn:hover {
     background: var(--stamp-dark);
-}
-
-.about-section {
-    margin-top: 64px;
-}
-
-.about-section h2 {
-    font-size: 26px;
-    margin-bottom: 14px;
-}
-
-.about-section p {
-    font-size: 17px;
-    line-height: 1.7;
-    color: var(--ink-muted);
 }
 
 .services-intro {
@@ -352,7 +291,7 @@ body.modal-open {
     padding: 0 40px;
 }
 
-.services-section > h2 {
+.services-section > h1 {
     font-size: 32px;
     margin-bottom: 12px;
 }
@@ -451,7 +390,6 @@ body.modal-open {
 
 .service-card-other {
     max-width: 520px;
-    margin: 0 auto;
 }
 
 /* Why VakeelSathi */
@@ -646,35 +584,12 @@ footer a:hover {
         margin-top: 10px;
     }
 
-    .hero {
-        padding: 48px 20px 56px;
-    }
-
-    .hero-content h1 {
-        font-size: 32px;
-    }
-
-    .hero-content p {
-        font-size: 16px;
-        max-width: none;
-    }
-
     .hero-form-card {
         padding: 24px;
     }
 
     .modal-overlay {
         padding: 20px 16px;
-    }
-
-    .docket-row {
-        gap: 4px 0;
-    }
-
-    .docket-item {
-        flex: 1 1 auto;
-        padding-right: 14px;
-        margin-right: 14px;
     }
 
     .services-section,
