@@ -1,5 +1,6 @@
 import { isHoneypotFilled, validateSubmission } from "./validate";
 import { sendLeadNotification } from "./notify";
+import { cutoffIso } from "./retention";
 
 export interface Env {
   DB: D1Database;
@@ -7,6 +8,10 @@ export interface Env {
   ALLOWED_ORIGIN: string;
   RESEND_API_KEY: string;
 }
+
+// The team is notified by email on every submission, so D1 only needs to
+// hold a lead long enough to act on it before it's purged.
+const RETENTION_DAYS = 7;
 
 function corsHeaders(origin: string, allowedOrigin: string): HeadersInit {
   if (origin !== allowedOrigin) return {};
@@ -100,5 +105,12 @@ export default {
     }
 
     return json({ ok: true }, 200, cors);
+  },
+
+  async scheduled(_event: ScheduledEvent, env: Env): Promise<void> {
+    const { meta } = await env.DB.prepare(`DELETE FROM leads WHERE created_at < ?`)
+      .bind(cutoffIso(RETENTION_DAYS))
+      .run();
+    console.log(`Purged ${meta.changes} lead(s) older than ${RETENTION_DAYS} days.`);
   },
 };

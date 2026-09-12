@@ -26,3 +26,7 @@ period = 60
 
 [vars]
 ALLOWED_ORIGIN = "https://vakeelsathi.in"
+
+# Runs the retention purge (see RETENTION_DAYS in src/index.ts) daily at 03:00 UTC.
+[triggers]
+crons = ["0 3 * * *"]
