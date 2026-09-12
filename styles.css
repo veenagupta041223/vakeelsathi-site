@@ -273,17 +273,6 @@ body.modal-open {
     color: var(--ink);
 }
 
-.form-service-summary a {
-    color: var(--stamp-dark);
-    font-weight: 600;
-    text-decoration: none;
-    margin-left: 6px;
-}
-
-.form-service-summary a:hover {
-    text-decoration: underline;
-}
-
 /* Explore Services */
 .services-section {
     max-width: 1180px;

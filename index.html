@@ -154,7 +154,6 @@
 
                 <p class="form-service-summary" id="service-summary" hidden>
                     Requesting: <strong id="service-summary-text"></strong>
-                    <a href="#" id="change-service-link">Change</a>
                 </p>
 
                 <div class="form-field">
@@ -465,23 +464,15 @@
         const serviceFieldGroup = document.getElementById("service-field-group");
         const serviceSummary = document.getElementById("service-summary");
         const serviceSummaryText = document.getElementById("service-summary-text");
-        const changeServiceLink = document.getElementById("change-service-link");
         const queryModal = document.getElementById("query-modal");
         const modalClose = document.getElementById("modal-close");
 
         function openModal(value, label) {
-            if (value) {
-                serviceSelect.value = value;
-                serviceSelect.dispatchEvent(new Event("change"));
-                serviceFieldGroup.hidden = true;
-                serviceSummaryText.textContent = label;
-                serviceSummary.hidden = false;
-            } else {
-                serviceSelect.value = "";
-                serviceSelect.dispatchEvent(new Event("change"));
-                serviceFieldGroup.hidden = false;
-                serviceSummary.hidden = true;
-            }
+            serviceSelect.value = value;
+            serviceSelect.dispatchEvent(new Event("change"));
+            serviceFieldGroup.hidden = true;
+            serviceSummaryText.textContent = label;
+            serviceSummary.hidden = false;
             queryModal.hidden = false;
             document.body.classList.add("modal-open");
             document.getElementById("name").focus();
@@ -496,14 +487,6 @@
             card.addEventListener("click", () => {
                 openModal(card.dataset.service, card.dataset.label);
             });
-        });
-
-        changeServiceLink.addEventListener("click", (event) => {
-            event.preventDefault();
-            serviceSelect.value = "";
-            serviceSelect.dispatchEvent(new Event("change"));
-            serviceFieldGroup.hidden = false;
-            serviceSummary.hidden = true;
         });
 
         modalClose.addEventListener("click", closeModal);
