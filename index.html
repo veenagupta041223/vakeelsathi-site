@@ -403,13 +403,22 @@
         footer {
             background: var(--ink);
             color: var(--paper);
-            padding: 36px 40px;
-            text-align: left;
+            padding: 28px 40px;
             margin-top: 56px;
         }
 
+        .footer-inner {
+            max-width: 1180px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px 24px;
+        }
+
         footer p {
-            margin-bottom: 8px;
+            margin-bottom: 0;
             color: #B7BAE0;
         }
 
@@ -535,12 +544,14 @@
 
     <!-- Footer -->
     <footer>
-        <p>© 2026 VakeelSathi. Made in India. आपका कानूनी साथी</p>
-        <p>
-            <a href="privacy.html">Privacy Policy</a> |
-            <a href="terms.html">Terms of Service</a> |
-            support@vakeelsathi.in
-        </p>
+        <div class="footer-inner">
+            <p>© 2026 VakeelSathi. Made in India. आपका कानूनी साथी</p>
+            <p>
+                <a href="privacy.html">Privacy Policy</a> |
+                <a href="terms.html">Terms of Service</a> |
+                support@vakeelsathi.in
+            </p>
+        </div>
     </footer>
 
     <!-- Service Intake Form Script -->
