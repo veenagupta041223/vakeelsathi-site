@@ -65,6 +65,21 @@ describe("validateSubmission", () => {
     const result = validateSubmission({ ...validPayload, message: "a".repeat(2000) });
     expect(result.ok).toBe(true);
   });
+
+  it("rejects service 'other' with no message", () => {
+    const result = validateSubmission({ ...validPayload, service: "other", message: "" });
+    expect(result.ok).toBe(false);
+  });
+
+  it("rejects service 'other' with a whitespace-only message", () => {
+    const result = validateSubmission({ ...validPayload, service: "other", message: "   " });
+    expect(result.ok).toBe(false);
+  });
+
+  it("accepts service 'other' when a message is provided", () => {
+    const result = validateSubmission({ ...validPayload, service: "other", message: "Need help with a landlord dispute." });
+    expect(result.ok).toBe(true);
+  });
 });
 
 describe("isHoneypotFilled", () => {

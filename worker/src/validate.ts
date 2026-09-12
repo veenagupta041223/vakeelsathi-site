@@ -59,6 +59,9 @@ export function validateSubmission(input: unknown): ValidationResult {
   if (rawMessage.length > 2000) {
     return { ok: false, error: "Please shorten your message." };
   }
+  if (service === "other" && rawMessage.length === 0) {
+    return { ok: false, error: "Please describe your issue so we know how to help." };
+  }
   const message = rawMessage.length > 0 ? rawMessage : null;
 
   return {

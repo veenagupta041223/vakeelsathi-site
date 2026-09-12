@@ -597,7 +597,7 @@
             </div>
 
             <div class="form-field">
-                <label for="message">Briefly Describe Your Issue (Optional)</label>
+                <label for="message" id="message-label">Briefly Describe Your Issue (Optional)</label>
                 <textarea id="message" name="message" rows="4" maxlength="1000" placeholder="If you selected 'Other', please tell us what you need help with."></textarea>
             </div>
 
@@ -647,6 +647,14 @@
         const form = document.getElementById("intake-form");
         const errorBox = document.getElementById("form-error");
         const submitBtn = document.getElementById("submit-btn");
+        const serviceSelect = document.getElementById("service");
+        const messageLabel = document.getElementById("message-label");
+
+        serviceSelect.addEventListener("change", () => {
+            messageLabel.textContent = serviceSelect.value === "other"
+                ? "Briefly Describe Your Issue (Required for 'Other')"
+                : "Briefly Describe Your Issue (Optional)";
+        });
 
         function showError(message) {
             errorBox.textContent = message;
@@ -679,6 +687,10 @@
             }
             if (!service) {
                 showError("Please select a legal service.");
+                return;
+            }
+            if (service === "other" && !message) {
+                showError("Please describe your issue so we know how to help.");
                 return;
             }
             if (!consent) {
