@@ -135,9 +135,9 @@
         /* Hero Section */
         .hero {
             display: grid;
-            grid-template-columns: 1.05fr 0.95fr;
+            grid-template-columns: 1fr 1fr;
             gap: 56px;
-            align-items: center;
+            align-items: start;
             padding: 72px 40px 64px;
             max-width: 1180px;
             margin: 0 auto;
@@ -156,72 +156,17 @@
             max-width: 46ch;
         }
 
-        .hero-image {
-            position: relative;
-            background: linear-gradient(135deg, var(--ink) 0%, var(--ink-light) 100%);
+        /* Hero form card — replaces the old hero photo */
+        .hero-form-card {
+            background: var(--panel);
+            border: 1px solid var(--rule);
             border-radius: calc(var(--radius) + 6px);
-            padding: 10px;
+            padding: 32px;
         }
 
-        .hero-photo-frame {
-            height: 400px;
-            width: 100%;
-            border-radius: var(--radius);
-            overflow: hidden;
-        }
-
-        .hero-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* Verified seal — the one deliberate graphic + motion moment */
-        .verify-seal {
-            position: absolute;
-            bottom: -22px;
-            left: -22px;
-            width: 108px;
-            height: 108px;
-            border-radius: 50%;
-            border: 2px solid var(--brass);
-            background: #FFFFFF;
-            color: var(--brass);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            transform: rotate(-11deg);
-            animation: stampDown 0.5s ease-out 0.2s backwards;
-        }
-
-        .verify-seal::before {
-            content: "";
-            position: absolute;
-            inset: 8px;
-            border: 1px dashed var(--brass);
-            border-radius: 50%;
-        }
-
-        .verify-seal span {
-            font-family: 'Zilla Slab', serif;
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            line-height: 1.3;
-        }
-
-        @keyframes stampDown {
-            0% { transform: rotate(-34deg) scale(1.7); opacity: 0; }
-            70% { transform: rotate(-8deg) scale(0.95); opacity: 1; }
-            100% { transform: rotate(-11deg) scale(1); opacity: 1; }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .verify-seal {
-                animation: none;
-            }
+        .hero-form-card h2 {
+            font-size: 26px;
+            margin-bottom: 10px;
         }
 
         /* Docket row — three short facts, ruled like a letterhead footer */
@@ -294,20 +239,6 @@
             .about-section h2 {
                 font-size: 24px;
             }
-        }
-
-        /* Services & Intake Section */
-        .services-section {
-            max-width: 640px;
-            margin: 56px auto 0;
-            padding: 56px 40px 0;
-            border-top: 1px solid var(--rule);
-            text-align: left;
-        }
-
-        .services-section h2 {
-            font-size: 30px;
-            margin-bottom: 10px;
         }
 
         .services-intro {
@@ -455,24 +386,8 @@
                 max-width: none;
             }
 
-            .hero-photo-frame {
-                height: 280px;
-            }
-
-            .hero-image {
-                order: -1;
-                margin-bottom: 28px;
-            }
-
-            .verify-seal {
-                width: 84px;
-                height: 84px;
-                bottom: -16px;
-                left: -12px;
-            }
-
-            .verify-seal span {
-                font-size: 11px;
+            .hero-form-card {
+                padding: 24px;
             }
 
             .docket-row {
@@ -488,11 +403,6 @@
             .launch-offer {
                 margin: 48px 20px 0;
                 padding: 28px 24px;
-            }
-
-            .services-section {
-                padding: 40px 20px 0;
-                margin-top: 48px;
             }
         }
 
@@ -543,13 +453,68 @@
             </div>
         </div>
 
-        <div class="hero-image">
-            <div class="hero-photo-frame">
-                <img src="assets/hero-lawyer.jpg" alt="Lawyer consulting a client online — verified legal help from VakeelSathi in India" width="1600" height="1066" fetchpriority="high" decoding="async">
-            </div>
-            <div class="verify-seal" aria-hidden="true">
-                <span>Verified<br>Advocates</span>
-            </div>
+        <div class="hero-form-card" id="services">
+            <h2>Have a Query? Let Us Know</h2>
+            <p class="services-intro">Tell us what you need help with — our team will review your request and get in touch with you directly.</p>
+
+            <form class="intake-form" id="intake-form" novalidate>
+                <div class="form-field">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" maxlength="100" required>
+                </div>
+
+                <div class="form-field">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" pattern="\d{10}" maxlength="10" placeholder="10-digit mobile number" required>
+                </div>
+
+                <div class="form-field">
+                    <label for="service">Service Needed</label>
+                    <select id="service" name="service" required>
+                        <option value="" disabled selected>Select a service</option>
+                        <option value="cheque-bounce-notice">Cheque Bounce Notice (Sec 138)</option>
+                        <option value="legal-notice-money-recovery">Legal Notice (Money Recovery)</option>
+                        <option value="reply-to-legal-notice">Reply to Legal Notice</option>
+                        <option value="rent-agreement-drafting">Rent Agreement Drafting</option>
+                        <option value="sale-deed-review">Sale Deed Review</option>
+                        <option value="property-title-verification">Property Title Verification</option>
+                        <option value="will-drafting">Will Drafting</option>
+                        <option value="mutual-divorce-petition">Mutual Divorce Petition</option>
+                        <option value="employment-contract-offer-letter">Employment Contract / Offer Letter</option>
+                        <option value="co-founder-agreement">Co-founder Agreement</option>
+                        <option value="startup-incorporation-pvt-ltd">Startup Incorporation (Pvt Ltd)</option>
+                        <option value="startup-establishment">Startup Establishment</option>
+                        <option value="gst-registration">GST Registration</option>
+                        <option value="msme-registration">MSME Registration</option>
+                        <option value="pancard-registration">PAN Card Registration</option>
+                        <option value="consumer-complaint-filing">Consumer Complaint Filing</option>
+                        <option value="e-challan-dispute-filing">e-Challan Dispute Filing</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-field">
+                    <label for="message" id="message-label">Briefly Describe Your Issue (Optional)</label>
+                    <textarea id="message" name="message" rows="4" maxlength="1000" placeholder="If you selected 'Other', please tell us what you need help with."></textarea>
+                </div>
+
+                <!-- Honeypot: hidden from real visitors via CSS; bots tend to fill every field -->
+                <div class="hp-field" aria-hidden="true">
+                    <label for="hp">Leave this field empty</label>
+                    <input type="text" id="hp" name="hp" tabindex="-1" autocomplete="off">
+                </div>
+
+                <div class="form-field form-consent">
+                    <label>
+                        <input type="checkbox" id="consent" name="consent" required>
+                        <span>I agree to the <a href="privacy.html" target="_blank">Privacy Policy</a> and <a href="terms.html" target="_blank">Terms of Service</a>, and consent to VakeelSathi storing my details to contact me about this request.</span>
+                    </label>
+                </div>
+
+                <p class="form-error" id="form-error" role="alert" hidden></p>
+
+                <button type="submit" class="btn" id="submit-btn">Submit Request</button>
+            </form>
         </div>
     </section>
 
@@ -557,67 +522,6 @@
     <section class="about-section">
         <h2>Verified Lawyers, Anywhere in India</h2>
         <p>VakeelSathi is a legal-help platform built for India — connecting you with verified, background-checked advocates for property disputes, family matters, consumer complaints, contracts, and more. No more waiting weeks for a consultation or navigating referrals you can't trust. Search by specialization, city, or language, and talk to a lawyer the same day.</p>
-    </section>
-
-    <!-- Services & Intake Section -->
-    <section class="services-section" id="services">
-        <h2>Have a Query? Let Us Know</h2>
-        <p class="services-intro">Tell us what you need help with — our team will review your request and get in touch with you directly.</p>
-
-        <form class="intake-form" id="intake-form" novalidate>
-            <div class="form-field">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" maxlength="100" required>
-            </div>
-
-            <div class="form-field">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" pattern="\d{10}" maxlength="10" placeholder="10-digit mobile number" required>
-            </div>
-
-            <div class="form-field">
-                <label for="service">Service Needed</label>
-                <select id="service" name="service" required>
-                    <option value="" disabled selected>Select a service</option>
-                    <option value="cheque-bounce-notice">Cheque Bounce Notice (Sec 138)</option>
-                    <option value="legal-notice-money-recovery">Legal Notice (Money Recovery)</option>
-                    <option value="reply-to-legal-notice">Reply to Legal Notice</option>
-                    <option value="rent-agreement-drafting">Rent Agreement Drafting</option>
-                    <option value="sale-deed-review">Sale Deed Review</option>
-                    <option value="property-title-verification">Property Title Verification</option>
-                    <option value="will-drafting">Will Drafting</option>
-                    <option value="mutual-divorce-petition">Mutual Divorce Petition</option>
-                    <option value="employment-contract-offer-letter">Employment Contract / Offer Letter</option>
-                    <option value="co-founder-agreement">Co-founder Agreement</option>
-                    <option value="startup-incorporation-pvt-ltd">Startup Incorporation (Pvt Ltd)</option>
-                    <option value="consumer-complaint-filing">Consumer Complaint Filing</option>
-                    <option value="e-challan-dispute-filing">e-Challan Dispute Filing</option>
-                    <option value="other">Other</option>
-                </select>
-            </div>
-
-            <div class="form-field">
-                <label for="message" id="message-label">Briefly Describe Your Issue (Optional)</label>
-                <textarea id="message" name="message" rows="4" maxlength="1000" placeholder="If you selected 'Other', please tell us what you need help with."></textarea>
-            </div>
-
-            <!-- Honeypot: hidden from real visitors via CSS; bots tend to fill every field -->
-            <div class="hp-field" aria-hidden="true">
-                <label for="hp">Leave this field empty</label>
-                <input type="text" id="hp" name="hp" tabindex="-1" autocomplete="off">
-            </div>
-
-            <div class="form-field form-consent">
-                <label>
-                    <input type="checkbox" id="consent" name="consent" required>
-                    <span>I agree to the <a href="privacy.html" target="_blank">Privacy Policy</a> and <a href="terms.html" target="_blank">Terms of Service</a>, and consent to VakeelSathi storing my details to contact me about this request.</span>
-                </label>
-            </div>
-
-            <p class="form-error" id="form-error" role="alert" hidden></p>
-
-            <button type="submit" class="btn" id="submit-btn">Submit Request</button>
-        </form>
     </section>
 
     <!-- Launch Offer -->
