@@ -273,16 +273,28 @@ body.modal-open {
     color: var(--ink);
 }
 
+/* Services banner */
+.services-banner {
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(30, 34, 102, 0.72), rgba(30, 34, 102, 0.72)), url('assets/hero-lawyer.jpg') center 22%/cover no-repeat;
+}
+
+.services-banner h1 {
+    color: #FFFFFF;
+    font-size: 40px;
+    margin: 0;
+    padding: 0 20px;
+}
+
 /* Explore Services */
 .services-section {
     max-width: 1180px;
-    margin: 72px auto 0;
+    margin: 56px auto 0;
     padding: 0 40px;
-}
-
-.services-section > h1 {
-    font-size: 32px;
-    margin-bottom: 12px;
 }
 
 .category-block {
@@ -552,11 +564,15 @@ footer a:hover {
     .services-section,
     .why-strip {
         padding: 0 20px;
-        margin-top: 48px;
+        margin-top: 40px;
     }
 
-    .services-section > h1 {
-        font-size: 26px;
+    .services-banner {
+        min-height: 160px;
+    }
+
+    .services-banner h1 {
+        font-size: 28px;
     }
 
     .launch-offer {
