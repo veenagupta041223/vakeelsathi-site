@@ -183,7 +183,7 @@
 
                 <div class="form-field">
                     <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" pattern="\d{10}" maxlength="10" placeholder="10-digit mobile number" required>
+                    <input type="tel" id="phone" name="phone" pattern="[6-9]\d{9}" maxlength="10" placeholder="10-digit mobile number" required>
                 </div>
 
                 <div class="form-field" id="service-field-group">
@@ -570,7 +570,7 @@
                 showError("Please enter your name.");
                 return;
             }
-            if (!/^\d{10}$/.test(phone)) {
+            if (!/^[6-9]\d{9}$/.test(phone)) {
                 showError("Please enter a valid 10-digit phone number.");
                 return;
             }

@@ -32,7 +32,9 @@ export type ValidationResult =
   | { ok: true; data: LeadSubmission }
   | { ok: false; error: string };
 
-const PHONE_RE = /^\d{10}$/;
+// Indian mobile numbers always start with 6, 7, 8, or 9 — rejects obvious
+// junk like "0000000000" or "1234567890" without needing paid OTP verification.
+const PHONE_RE = /^[6-9]\d{9}$/;
 
 export function validateSubmission(input: unknown): ValidationResult {
   if (typeof input !== "object" || input === null) {
