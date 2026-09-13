@@ -1,12 +1,14 @@
 import { isHoneypotFilled, validateSubmission } from "./validate";
 import { sendLeadNotification } from "./notify";
 import { cutoffIso } from "./retention";
+import { verifyTurnstile } from "./turnstile";
 
 export interface Env {
   DB: D1Database;
   RATE_LIMITER: RateLimit;
   ALLOWED_ORIGIN: string;
   RESEND_API_KEY: string;
+  TURNSTILE_SECRET_KEY: string;
 }
 
 // The team is notified by email on every submission, so D1 only needs to
@@ -51,8 +53,9 @@ export default {
       return json({ ok: false, error: "Origin not allowed." }, 403);
     }
 
+    const ip = request.headers.get("CF-Connecting-IP") ?? "unknown";
+
     try {
-      const ip = request.headers.get("CF-Connecting-IP") ?? "unknown";
       const { success: withinLimit } = await env.RATE_LIMITER.limit({ key: ip });
       if (!withinLimit) {
         return json({ ok: false, error: "Too many requests. Please try again later." }, 429, cors);
@@ -74,6 +77,18 @@ export default {
     if (isHoneypotFilled(body.hp)) {
       // Pretend success so bots don't learn they were caught.
       return json({ ok: true }, 200, cors);
+    }
+
+    const passedTurnstile = await verifyTurnstile(
+      env.TURNSTILE_SECRET_KEY,
+      body["cf-turnstile-response"],
+      ip,
+    ).catch((error) => {
+      console.error("Turnstile verification failed:", error);
+      return false;
+    });
+    if (!passedTurnstile) {
+      return json({ ok: false, error: "Verification failed. Please try again." }, 400, cors);
     }
 
     const result = validateSubmission(body);

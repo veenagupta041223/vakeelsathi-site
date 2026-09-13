@@ -248,6 +248,10 @@ body.modal-open {
     margin-bottom: 20px;
 }
 
+.cf-turnstile {
+    margin-bottom: 20px;
+}
+
 .intake-form .btn {
     width: 100%;
     margin-top: 0;

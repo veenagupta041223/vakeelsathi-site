@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Zilla+Slab:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
     <!-- Open Graph / Social Sharing -->
     <meta property="og:type" content="website">
@@ -232,6 +233,8 @@
                         <span>I agree to the <a href="privacy.html" target="_blank">Privacy Policy</a> and <a href="terms.html" target="_blank">Terms of Service</a>, and consent to VakeelSathi storing my details to contact me about this request.</span>
                     </label>
                 </div>
+
+                <div class="cf-turnstile" id="turnstile-widget" data-sitekey="0x4AAAAAAEy2AUf7qgK6m41D"></div>
 
                 <p class="form-error" id="form-error" role="alert" hidden></p>
 
@@ -526,6 +529,7 @@
             document.getElementById("modal-form-view").hidden = false;
             form.reset();
             clearError();
+            if (window.turnstile) window.turnstile.reset("turnstile-widget");
         }
 
         document.querySelectorAll(".service-card").forEach((card) => {
@@ -587,6 +591,12 @@
                 return;
             }
 
+            const turnstileToken = document.querySelector('#turnstile-widget input[name="cf-turnstile-response"]')?.value || "";
+            if (!turnstileToken) {
+                showError("Please complete the verification challenge.");
+                return;
+            }
+
             submitBtn.disabled = true;
             submitBtn.textContent = "Submitting...";
 
@@ -594,7 +604,7 @@
                 const response = await fetch(SERVICE_ENDPOINT, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ name, phone, service, message, consent, hp }),
+                    body: JSON.stringify({ name, phone, service, message, consent, hp, "cf-turnstile-response": turnstileToken }),
                 });
 
                 const data = await response.json();
@@ -611,6 +621,8 @@
             } finally {
                 submitBtn.disabled = false;
                 submitBtn.textContent = "Submit Request";
+                // Turnstile tokens are single-use; reset so a retry gets a fresh one.
+                if (window.turnstile) window.turnstile.reset("turnstile-widget");
             }
         });
     </script>
