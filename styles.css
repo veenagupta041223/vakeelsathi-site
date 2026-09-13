@@ -78,7 +78,7 @@ nav {
     right: 40px;
     background: #FFFFFF;
     color: var(--ink);
-    padding: 6px 14px;
+    padding: 8px 26px;
     border-radius: 20px;
     font-size: 13px;
     font-weight: 600;
@@ -285,36 +285,6 @@ body.modal-open {
     margin-bottom: 12px;
 }
 
-.services-section > .section-intro {
-    font-size: 17px;
-    line-height: 1.7;
-    color: var(--ink-muted);
-    margin-bottom: 28px;
-    max-width: 64ch;
-}
-
-.service-nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 44px;
-}
-
-.service-nav a {
-    background: var(--panel);
-    border: 1px solid var(--rule);
-    color: var(--ink);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 14px;
-    padding: 8px 16px;
-    border-radius: 20px;
-}
-
-.service-nav a:hover {
-    border-color: var(--ink);
-}
-
 .category-block {
     margin-bottom: 48px;
 }
@@ -458,26 +428,13 @@ footer {
 .footer-grid {
     max-width: 1180px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 24px;
     padding-bottom: 24px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.footer-col h4 {
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 14px;
-    color: #FFFFFF;
-    margin-bottom: 14px;
-}
-
-.footer-col ul {
-    list-style: none;
-}
-
-.footer-col li {
-    margin-bottom: 10px;
 }
 
 .footer-col p {
@@ -485,6 +442,17 @@ footer {
     font-size: 14px;
     line-height: 1.6;
     margin-top: 8px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+}
+
+.footer-links a {
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .footer-bottom {
@@ -587,7 +555,7 @@ footer a:hover {
         margin-top: 48px;
     }
 
-    .services-section > h2 {
+    .services-section > h1 {
         font-size: 26px;
     }
 
@@ -597,7 +565,7 @@ footer a:hover {
     }
 
     .footer-grid {
-        grid-template-columns: 1fr;
+        flex-direction: column;
         gap: 24px;
     }
 
