@@ -302,22 +302,6 @@ body.modal-open {
     color: var(--ink);
 }
 
-/* Services banner */
-.services-banner {
-    min-height: 220px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.services-banner h1 {
-    color: var(--ink);
-    font-size: 40px;
-    margin: 0;
-    padding: 0 20px;
-}
-
 /* Explore Services */
 .services-section {
     max-width: 1180px;
@@ -603,14 +587,6 @@ footer a:hover {
     .why-strip {
         padding: 0 20px;
         margin-top: 40px;
-    }
-
-    .services-banner {
-        min-height: 160px;
-    }
-
-    .services-banner h1 {
-        font-size: 28px;
     }
 
     .launch-offer {
