@@ -342,45 +342,58 @@ body.modal-open {
 
 .service-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
 }
 
 .service-card {
     display: flex;
-    align-items: flex-start;
-    gap: 14px;
+    flex-direction: column;
     text-align: left;
     width: 100%;
     background: var(--panel);
     border: 1px solid var(--rule);
     border-radius: var(--radius);
-    padding: 18px;
+    padding: 0;
+    overflow: hidden;
     font-family: inherit;
     cursor: pointer;
-    transition: border-color 0.2s ease;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .service-card:hover,
 .service-card:focus-visible {
     border-color: var(--ink);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.service-card-visual {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg);
 }
 
 .service-card-icon {
-    width: 26px;
-    height: 26px;
-    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
     color: var(--stamp-dark);
-    margin-top: 2px;
 }
 
 .service-card-photo {
-    width: 60px;
-    height: 60px;
+    width: 100%;
+    aspect-ratio: 16 / 10;
     flex-shrink: 0;
-    border-radius: 10px;
-    object-fit: cover;
-    object-position: center 35%;
+    display: block;
+    background: var(--bg);
+    object-fit: contain;
+}
+
+.service-card-body {
+    padding: 16px 18px 20px;
 }
 
 .service-card-body strong {
