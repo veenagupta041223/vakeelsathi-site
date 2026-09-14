@@ -208,6 +208,10 @@
                         <option value="pancard-registration">PAN Card Registration</option>
                         <option value="consumer-complaint-filing">Consumer Complaint Filing</option>
                         <option value="e-challan-dispute-filing">e-Challan Dispute Filing</option>
+                        <option value="mact-accident-claim">MACT Claim (Accident Compensation)</option>
+                        <option value="cyber-fraud-complaint">Cyber Fraud Complaint</option>
+                        <option value="bank-account-unfreezing">Bank Account Unfreezing Help</option>
+                        <option value="marriage-registration">Marriage Registration</option>
                         <option value="other">Other</option>
                     </select>
                 </div>
@@ -285,14 +289,14 @@
             <p class="category-intro">From renting to buying, get your property paperwork checked before you sign anything.</p>
             <div class="service-grid">
                 <button type="button" class="service-card" data-service="rent-agreement-drafting" data-label="Rent Agreement Drafting">
-                    <svg class="service-card-icon" aria-hidden="true"><use href="#icon-rent-agreement"></use></svg>
+                    <img class="service-card-photo" src="assets/services/rent-agreement-drafting.jpg" alt="" loading="lazy">
                     <span class="service-card-body">
                         <strong>Rent Agreement Drafting</strong>
                         <span>A clear, enforceable rental agreement for landlords and tenants.</span>
                     </span>
                 </button>
                 <button type="button" class="service-card" data-service="sale-deed-review" data-label="Sale Deed Review">
-                    <svg class="service-card-icon" aria-hidden="true"><use href="#icon-sale-deed"></use></svg>
+                    <img class="service-card-photo" src="assets/services/sale-deed-review.jpg" alt="" loading="lazy">
                     <span class="service-card-body">
                         <strong>Sale Deed Review</strong>
                         <span>Have a property sale deed checked before you sign.</span>
@@ -319,8 +323,15 @@
                         <span>Put your wishes in writing with a legally sound will.</span>
                     </span>
                 </button>
+                <button type="button" class="service-card" data-service="marriage-registration" data-label="Marriage Registration">
+                    <img class="service-card-photo" src="assets/services/marriage-registration.jpg" alt="" loading="lazy">
+                    <span class="service-card-body">
+                        <strong>Marriage Registration</strong>
+                        <span>Register your marriage and get your official marriage certificate.</span>
+                    </span>
+                </button>
                 <button type="button" class="service-card" data-service="mutual-divorce-petition" data-label="Mutual Divorce Petition">
-                    <svg class="service-card-icon" aria-hidden="true"><use href="#icon-divorce"></use></svg>
+                    <img class="service-card-photo" src="assets/services/mutual-divorce-petition.jpg" alt="" loading="lazy">
                     <span class="service-card-body">
                         <strong>Mutual Divorce Petition</strong>
                         <span>File for divorce by mutual consent with proper documentation.</span>
@@ -355,7 +366,7 @@
                     </span>
                 </button>
                 <button type="button" class="service-card" data-service="startup-establishment" data-label="Startup Establishment">
-                    <svg class="service-card-icon" aria-hidden="true"><use href="#icon-startup-launch"></use></svg>
+                    <img class="service-card-photo" src="assets/services/startup-establishment.jpg" alt="" loading="lazy">
                     <span class="service-card-body">
                         <strong>Startup Establishment</strong>
                         <span>End-to-end help setting up your new business the right way.</span>
@@ -369,14 +380,14 @@
             <p class="category-intro">Government registrations, sorted — without the paperwork headache.</p>
             <div class="service-grid">
                 <button type="button" class="service-card" data-service="gst-registration" data-label="GST Registration">
-                    <svg class="service-card-icon" aria-hidden="true"><use href="#icon-gst"></use></svg>
+                    <img class="service-card-photo" src="assets/services/gst-registration.jpg" alt="" loading="lazy">
                     <span class="service-card-body">
                         <strong>GST Registration</strong>
                         <span>Get registered for GST and stay compliant from day one.</span>
                     </span>
                 </button>
                 <button type="button" class="service-card" data-service="msme-registration" data-label="MSME Registration">
-                    <svg class="service-card-icon" aria-hidden="true"><use href="#icon-msme"></use></svg>
+                    <img class="service-card-photo" src="assets/services/msme-registration.jpg" alt="" loading="lazy">
                     <span class="service-card-body">
                         <strong>MSME Registration</strong>
                         <span>Register your business as an MSME for available benefits.</span>
@@ -393,8 +404,8 @@
         </div>
 
         <div class="category-block" id="disputes">
-            <h3>Consumer &amp; Traffic Disputes</h3>
-            <p class="category-intro">Stand up for your rights as a consumer or contest an unfair traffic fine.</p>
+            <h3>Consumer, Traffic &amp; Accident Disputes</h3>
+            <p class="category-intro">Stand up for your rights as a consumer, contest an unfair traffic fine, or claim what you're owed after an accident.</p>
             <div class="service-grid">
                 <button type="button" class="service-card" data-service="consumer-complaint-filing" data-label="Consumer Complaint Filing">
                     <svg class="service-card-icon" aria-hidden="true"><use href="#icon-consumer-complaint"></use></svg>
@@ -404,10 +415,38 @@
                     </span>
                 </button>
                 <button type="button" class="service-card" data-service="e-challan-dispute-filing" data-label="e-Challan Dispute Filing">
-                    <svg class="service-card-icon" aria-hidden="true"><use href="#icon-echallan"></use></svg>
+                    <img class="service-card-photo" src="assets/services/e-challan-dispute-filing.jpg" alt="" loading="lazy">
                     <span class="service-card-body">
                         <strong>e-Challan Dispute Filing</strong>
                         <span>Contest a traffic e-challan you believe was issued unfairly.</span>
+                    </span>
+                </button>
+                <button type="button" class="service-card" data-service="mact-accident-claim" data-label="MACT Claim (Accident Compensation)">
+                    <img class="service-card-photo" src="assets/services/mact-accident-claim.jpg" alt="" loading="lazy">
+                    <span class="service-card-body">
+                        <strong>MACT Claim (Accident Compensation)</strong>
+                        <span>File for compensation after a motor accident injury or loss.</span>
+                    </span>
+                </button>
+            </div>
+        </div>
+
+        <div class="category-block" id="cyber-financial">
+            <h3>Cyber &amp; Financial Fraud</h3>
+            <p class="category-intro">Been scammed online or locked out of your own account? Get help fighting back.</p>
+            <div class="service-grid">
+                <button type="button" class="service-card" data-service="cyber-fraud-complaint" data-label="Cyber Fraud Complaint">
+                    <img class="service-card-photo" src="assets/services/cyber-fraud-complaint.jpg" alt="" loading="lazy">
+                    <span class="service-card-body">
+                        <strong>Cyber Fraud Complaint</strong>
+                        <span>Report online fraud, phishing, or OTP scams and get help recovering your money.</span>
+                    </span>
+                </button>
+                <button type="button" class="service-card" data-service="bank-account-unfreezing" data-label="Bank Account Unfreezing Help">
+                    <img class="service-card-photo" src="assets/services/bank-account-unfreezing.jpg" alt="" loading="lazy">
+                    <span class="service-card-body">
+                        <strong>Bank Account Unfreezing Help</strong>
+                        <span>Get legal help to unblock a frozen bank account.</span>
                     </span>
                 </button>
             </div>

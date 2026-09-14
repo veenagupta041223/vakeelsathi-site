@@ -16,6 +16,10 @@ export const SERVICES = [
   "pancard-registration",
   "consumer-complaint-filing",
   "e-challan-dispute-filing",
+  "mact-accident-claim",
+  "cyber-fraud-complaint",
+  "bank-account-unfreezing",
+  "marriage-registration",
   "other",
 ] as const;
 

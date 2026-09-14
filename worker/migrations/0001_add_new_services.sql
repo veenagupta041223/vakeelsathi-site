@@ -1,4 +1,6 @@
-CREATE TABLE IF NOT EXISTS leads (
+-- SQLite can't ALTER a CHECK constraint in place, so rebuild the table with
+-- the widened `service` allow-list and swap it in.
+CREATE TABLE leads_new (
   id          INTEGER PRIMARY KEY AUTOINCREMENT,
   name        TEXT NOT NULL,
   phone       TEXT NOT NULL,
@@ -19,3 +21,7 @@ CREATE TABLE IF NOT EXISTS leads (
   created_at  TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ', 'now')),
   user_agent  TEXT
 );
+
+INSERT INTO leads_new SELECT * FROM leads;
+DROP TABLE leads;
+ALTER TABLE leads_new RENAME TO leads;
