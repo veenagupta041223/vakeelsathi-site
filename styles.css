@@ -325,31 +325,16 @@ body.modal-open {
     padding: 0 40px;
 }
 
-.category-block {
-    margin-bottom: 48px;
-}
-
-.category-block h3 {
-    font-size: 22px;
-    margin-bottom: 6px;
-}
-
-.category-block .category-intro {
-    font-size: 15px;
-    color: var(--ink-muted);
-    margin-bottom: 20px;
-}
-
 .service-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
 .service-card {
     display: flex;
     flex-direction: column;
-    text-align: left;
+    text-align: center;
     width: 100%;
     background: var(--panel);
     border: 1px solid var(--rule);
@@ -358,18 +343,19 @@ body.modal-open {
     overflow: hidden;
     font-family: inherit;
     cursor: pointer;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .service-card:hover,
 .service-card:focus-visible {
-    border-color: var(--ink);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
 }
 
 .service-card-visual {
     width: 100%;
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 3 / 4;
     flex-shrink: 0;
     display: flex;
     align-items: center;
@@ -385,7 +371,7 @@ body.modal-open {
 
 .service-card-photo {
     width: 100%;
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 3 / 4;
     flex-shrink: 0;
     display: block;
     background: var(--bg);
@@ -407,10 +393,6 @@ body.modal-open {
     font-size: 14px;
     color: var(--ink-muted);
     line-height: 1.5;
-}
-
-.service-card-other {
-    max-width: 520px;
 }
 
 /* Why VakeelSathi */
@@ -613,6 +595,10 @@ footer a:hover {
 
     .modal-overlay {
         padding: 20px 16px;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
     }
 
     .services-section,
