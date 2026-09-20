@@ -317,10 +317,12 @@ body.modal-open {
 
 /* Page intro */
 .page-intro {
-    max-width: 720px;
+    max-width: 1180px;
     margin: 40px auto 0;
-    padding: 0 20px;
+    padding: 40px 40px 56px;
     text-align: center;
+    border-radius: var(--radius);
+    background: linear-gradient(rgba(246, 247, 250, 0.93), rgba(246, 247, 250, 0.93)), url('assets/hero-lawyer.jpg') center top / cover no-repeat;
 }
 
 .page-intro h1 {
@@ -620,6 +622,10 @@ footer a:hover {
     .why-strip {
         padding: 0 20px;
         margin-top: 40px;
+    }
+
+    .page-intro {
+        padding: 28px 20px 32px;
     }
 
     .launch-offer {
