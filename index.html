@@ -790,6 +790,24 @@
                 if (window.turnstile) window.turnstile.reset("turnstile-widget");
             }
         });
+
+        // Fade cards in as they scroll into view. Skipped entirely for reduced-motion
+        // so those users never get an opacity:0 element stuck if something goes wrong.
+        if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("in-view");
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            document.querySelectorAll(".why-card, .service-card, .launch-offer").forEach((el) => {
+                el.classList.add("reveal");
+                revealObserver.observe(el);
+            });
+        }
     </script>
 </body>
 </html>
