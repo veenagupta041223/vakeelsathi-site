@@ -346,6 +346,7 @@
 
     <div class="page-intro">
         <h1>Talk to a Verified Lawyer Online in India</h1>
+        <button type="button" class="btn hero-cta" data-service="other" data-label="General Legal Query">Get Legal Help</button>
 
         <!-- Why VakeelSathi -->
         <h2 class="why-strip-heading">Why VakeelSathi</h2>
@@ -703,7 +704,7 @@
             if (window.turnstile) window.turnstile.reset("turnstile-widget");
         }
 
-        document.querySelectorAll(".service-card").forEach((card) => {
+        document.querySelectorAll(".service-card, .hero-cta").forEach((card) => {
             card.addEventListener("click", () => {
                 openModal(card.dataset.service, card.dataset.label);
             });
