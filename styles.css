@@ -33,8 +33,8 @@ h1, h2, h3 {
     line-height: 1.15;
 }
 
-/* Navigation */
-nav {
+/* Navigation (header nav only — footer has its own nav.footer-links) */
+body > nav {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -597,7 +597,7 @@ footer a:hover {
 
 /* Responsive */
 @media (max-width: 768px) {
-    nav {
+    body > nav {
         padding: 15px 20px;
         flex-direction: column;
         gap: 10px;
