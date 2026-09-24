@@ -15,6 +15,6 @@ Allow: /
 # Crawl delay to be respectful to server
 Crawl-delay: 1
 
-# Sitemap location
-Sitemap: https://www.vakeelsathi.in/sitemap.xml
+# Sitemap location (apex domain only — www redirects to apex, so a
+# www sitemap entry just points Googlebot at redirect stubs)
 Sitemap: https://vakeelsathi.in/sitemap.xml

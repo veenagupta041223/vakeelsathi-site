@@ -5,8 +5,8 @@
 }
 
 :root {
-    --ink: #1E2266;
-    --ink-light: #4B4FA6;
+    --ink: #14213D;
+    --ink-light: #2B3D66;
     --ink-muted: #55586E;
     --paper: #F6F7FA;
     --panel: #EFF1F7;
@@ -27,7 +27,7 @@ body {
 }
 
 h1, h2, h3 {
-    font-family: 'Zilla Slab', Georgia, serif;
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     color: var(--ink);
     font-weight: 700;
     line-height: 1.15;
@@ -36,11 +36,14 @@ h1, h2, h3 {
 /* Navigation (header nav only — footer has its own nav.footer-links) */
 body > nav {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 18px 40px;
-    background: linear-gradient(135deg, var(--ink) 0%, var(--ink-light) 100%);
-    position: relative;
+    padding: 16px 40px;
+    background: #FFFFFF;
+    border-bottom: 1px solid var(--rule);
+    position: sticky;
+    top: 0;
+    z-index: 60;
 }
 
 .logo {
@@ -64,30 +67,33 @@ body > nav {
     color: #FFFFFF;
 }
 
+/* Header nav sits on a white bar now, so its logo needs the dark variant */
+nav .logo-text {
+    color: var(--ink);
+}
+
+nav .logo-text sup {
+    color: var(--ink-muted);
+}
+
 .logo-img {
     height: 42px;
     width: 42px;
     display: block;
-    background: #FFFFFF;
-    border-radius: 50%;
-    padding: 5px;
 }
 
 .coming-soon-badge {
-    position: absolute;
-    top: 14px;
-    right: 40px;
     display: inline-flex;
     align-items: center;
     gap: 9px;
-    background: #FFFFFF;
+    background: var(--panel);
     color: var(--ink);
-    padding: 11px 24px;
+    padding: 9px 18px;
     border-radius: 24px;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 700;
     letter-spacing: 0.2px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--rule);
 }
 
 .coming-soon-dot {
@@ -180,8 +186,8 @@ body.modal-open {
 .btn {
     background: var(--stamp);
     color: var(--ink);
-    padding: 15px 30px;
-    border-radius: var(--radius);
+    padding: 15px 32px;
+    border-radius: 999px;
     font-weight: 600;
     border: none;
     cursor: pointer;
@@ -370,6 +376,37 @@ body.modal-open {
 
 .hero-cta {
     animation: fadeInUp 0.7s ease 0.15s both, ctaPulse 2.4s ease-in-out 1.4s infinite;
+}
+
+/* Trust badge row, shown under the hero headline */
+.trust-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 18px auto 0;
+    animation: fadeInUp 0.7s ease 0.1s both;
+}
+
+.trust-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 14px;
+    background: #FFFFFF;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+    box-shadow: 0 2px 6px rgba(20, 33, 61, 0.06);
+}
+
+.trust-badge svg {
+    width: 15px;
+    height: 15px;
+    color: var(--stamp-dark);
+    flex-shrink: 0;
 }
 
 /* Why VakeelSathi */
@@ -651,7 +688,6 @@ footer a:hover {
     }
 
     .coming-soon-badge {
-        position: static;
         margin-top: 10px;
     }
 
@@ -699,6 +735,7 @@ footer a:hover {
 @media (prefers-reduced-motion: reduce) {
     .page-intro h1,
     .hero-cta,
+    .trust-bar,
     .why-strip-heading,
     .modal-overlay:not([hidden]),
     .modal-box,
