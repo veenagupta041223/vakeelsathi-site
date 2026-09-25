@@ -409,14 +409,6 @@ body.modal-open {
     flex-shrink: 0;
 }
 
-/* Why VakeelSathi */
-.why-strip-heading {
-    text-align: center;
-    font-size: 22px;
-    margin: 40px auto 20px;
-    animation: fadeInUp 0.7s ease 0.3s both;
-}
-
 /* Explore Services */
 .services-section {
     max-width: 1180px;
@@ -495,43 +487,6 @@ body.modal-open {
 }
 
 .service-card-body span {
-    font-size: 14px;
-    color: var(--ink-muted);
-    line-height: 1.5;
-}
-
-/* Why VakeelSathi */
-.why-strip {
-    max-width: 1180px;
-    margin: 72px auto 0;
-    padding: 0 40px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-}
-
-.why-card {
-    text-align: center;
-    padding: 28px 20px;
-    background: var(--panel);
-    border: 1px solid var(--rule);
-    border-radius: var(--radius-lg);
-    box-shadow: 0 2px 10px rgba(30, 34, 102, 0.06);
-}
-
-.why-card svg {
-    width: 32px;
-    height: 32px;
-    color: var(--stamp-dark);
-    margin-bottom: 14px;
-}
-
-.why-card h3 {
-    font-size: 17px;
-    margin-bottom: 6px;
-}
-
-.why-card p {
     font-size: 14px;
     color: var(--ink-muted);
     line-height: 1.5;
@@ -703,8 +658,7 @@ footer a:hover {
         grid-template-columns: 1fr;
     }
 
-    .services-section,
-    .why-strip {
+    .services-section {
         padding: 0 20px;
         margin-top: 40px;
     }
@@ -736,7 +690,6 @@ footer a:hover {
     .page-intro h1,
     .hero-cta,
     .trust-bar,
-    .why-strip-heading,
     .modal-overlay:not([hidden]),
     .modal-box,
     .reveal.in-view {

@@ -353,31 +353,6 @@
             <span class="trust-badge"><svg aria-hidden="true"><use href="#icon-eye"></use></svg>DPDP-Compliant Privacy</span>
         </div>
         <button type="button" class="btn hero-cta" data-service="other" data-label="General Legal Query">Get Legal Help</button>
-
-        <!-- Why VakeelSathi -->
-        <h2 class="why-strip-heading">Why VakeelSathi</h2>
-        <section class="why-strip">
-            <div class="why-card">
-                <svg aria-hidden="true"><use href="#icon-check"></use></svg>
-                <h3>Verified Advocates</h3>
-                <p>Every lawyer on VakeelSathi is background-checked before they can take a case.</p>
-            </div>
-            <div class="why-card">
-                <svg aria-hidden="true"><use href="#icon-chat"></use></svg>
-                <h3>Direct Human Support</h3>
-                <p>A real person reviews your request — no chatbots standing between you and help.</p>
-            </div>
-            <div class="why-card">
-                <svg aria-hidden="true"><use href="#icon-eye"></use></svg>
-                <h3>Transparent Process</h3>
-                <p>Clear next steps from the moment you submit your request — no hidden surprises.</p>
-            </div>
-            <div class="why-card">
-                <svg aria-hidden="true"><use href="#icon-clock"></use></svg>
-                <h3>Same-Day Response</h3>
-                <p>We aim to get back to every request the same day it's submitted.</p>
-            </div>
-        </section>
     </div>
 
     <!-- Query modal: opened by clicking any service card below -->
@@ -809,7 +784,7 @@
                 });
             }, { threshold: 0.15 });
 
-            document.querySelectorAll(".why-card, .service-card, .launch-offer").forEach((el) => {
+            document.querySelectorAll(".service-card, .launch-offer").forEach((el) => {
                 el.classList.add("reveal");
                 revealObserver.observe(el);
             });
