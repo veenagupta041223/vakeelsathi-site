@@ -375,6 +375,7 @@ body.modal-open {
 }
 
 .hero-cta {
+    margin-top: 22px;
     animation: fadeInUp 0.7s ease 0.15s both, ctaPulse 2.4s ease-in-out 1.4s infinite;
 }
 
