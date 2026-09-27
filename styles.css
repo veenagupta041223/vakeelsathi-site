@@ -374,9 +374,39 @@ body.modal-open {
     animation: fadeInUp 0.7s ease both;
 }
 
-.hero-cta {
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
     margin-top: 22px;
+}
+
+.hero-actions .btn {
+    margin-top: 0;
+}
+
+.hero-cta {
     animation: fadeInUp 0.7s ease 0.15s both, ctaPulse 2.4s ease-in-out 1.4s infinite;
+}
+
+.whatsapp-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #25D366;
+    color: #FFFFFF;
+    animation: fadeInUp 0.7s ease 0.2s both;
+}
+
+.whatsapp-cta:hover {
+    background: #1DA851;
+}
+
+.whatsapp-cta svg {
+    width: 18px;
+    height: 18px;
 }
 
 /* Trust badge row, shown under the hero headline */
@@ -690,6 +720,7 @@ footer a:hover {
 @media (prefers-reduced-motion: reduce) {
     .page-intro h1,
     .hero-cta,
+    .whatsapp-cta,
     .trust-bar,
     .modal-overlay:not([hidden]),
     .modal-box,
