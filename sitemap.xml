@@ -23,4 +23,12 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
+
+    <!-- Account deletion -->
+    <url>
+        <loc>https://vakeelsathi.in/delete-account.html</loc>
+        <lastmod>2026-10-07</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
 </urlset>
