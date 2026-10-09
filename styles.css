@@ -547,6 +547,11 @@ body.modal-open {
     margin-bottom: 22px;
 }
 
+.launch-offer .offer-note {
+    font-size: 13px;
+    margin-top: -12px;
+}
+
 .launch-offer .btn {
     margin-top: 0;
     display: inline-flex;
