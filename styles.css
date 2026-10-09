@@ -387,24 +387,6 @@ body.modal-open {
     margin-top: 0;
 }
 
-.whatsapp-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: #25D366;
-    color: #FFFFFF;
-    animation: fadeInUp 0.7s ease 0.2s both;
-}
-
-.whatsapp-cta:hover {
-    background: #1DA851;
-}
-
-.whatsapp-cta svg {
-    width: 18px;
-    height: 18px;
-}
-
 /* Explore Services */
 .services-section {
     max-width: 1180px;
@@ -649,7 +631,6 @@ footer a:hover {
 
 @media (prefers-reduced-motion: reduce) {
     .page-intro h1,
-    .whatsapp-cta,
     .modal-overlay:not([hidden]),
     .modal-box,
     .reveal.in-view {
