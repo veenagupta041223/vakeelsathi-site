@@ -452,7 +452,8 @@
 
                 <div class="form-field">
                     <label for="message" id="message-label">Briefly Describe Your Issue (Optional)</label>
-                    <textarea id="message" name="message" rows="4" maxlength="1000" placeholder="If you selected 'Other', please tell us what you need help with."></textarea>
+                    <textarea id="message" name="message" rows="4" maxlength="1000" placeholder="If you selected 'Other', please tell us what you need help with." aria-describedby="message-hint"></textarea>
+                    <p class="form-hint" id="message-hint">Share only what we need to understand your request. Please don't include confidential documents, Aadhaar or PAN numbers, bank or card details, or passwords.</p>
                 </div>
 
                 <!-- Honeypot: hidden from real visitors via CSS; bots tend to fill every field -->
@@ -464,7 +465,7 @@
                 <div class="form-field form-consent">
                     <label>
                         <input type="checkbox" id="consent" name="consent" required>
-                        <span>I agree to the <a href="privacy.html" target="_blank">Privacy Policy</a> and <a href="terms.html" target="_blank">Terms of Service</a>, and consent to VakeelSathi storing my details to contact me about this request.</span>
+                        <span>I confirm I am 18 or older. I agree to the <a href="privacy.html" target="_blank">Privacy Policy</a> and <a href="terms.html" target="_blank">Terms of Service</a>, and consent to VakeelSathi storing my details, contacting me about this request, and sharing them with an independent advocate to help with it.</span>
                     </label>
                 </div>
 
@@ -856,7 +857,7 @@
                 return;
             }
             if (!consent) {
-                showError("Please accept the Privacy Policy and Terms to continue.");
+                showError("Please confirm you are 18 or older and accept the Privacy Policy and Terms to continue.");
                 return;
             }
 
