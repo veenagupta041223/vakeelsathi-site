@@ -3,7 +3,7 @@
     <!-- Homepage -->
     <url>
         <loc>https://vakeelsathi.in/</loc>
-        <lastmod>2026-09-14</lastmod>
+        <lastmod>2026-10-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -30,5 +30,61 @@
         <lastmod>2026-10-07</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
+    </url>
+
+    <!-- Practice areas and legal guides -->
+    <url>
+        <loc>https://vakeelsathi.in/cheque-bounce-lawyer.html</loc>
+        <lastmod>2026-10-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://vakeelsathi.in/property-lawyer.html</loc>
+        <lastmod>2026-10-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://vakeelsathi.in/family-lawyer.html</loc>
+        <lastmod>2026-10-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://vakeelsathi.in/business-startup-lawyer.html</loc>
+        <lastmod>2026-10-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://vakeelsathi.in/consumer-accident-lawyer.html</loc>
+        <lastmod>2026-10-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://vakeelsathi.in/cyber-fraud-lawyer.html</loc>
+        <lastmod>2026-10-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://vakeelsathi.in/guide-cheque-bounce-section-138.html</loc>
+        <lastmod>2026-10-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://vakeelsathi.in/guide-mutual-consent-divorce.html</loc>
+        <lastmod>2026-10-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://vakeelsathi.in/guide-cyber-fraud-what-to-do.html</loc>
+        <lastmod>2026-10-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
 </urlset>

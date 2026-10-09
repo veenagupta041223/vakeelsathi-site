@@ -349,6 +349,11 @@
             <span class="logo-text">VakeelSathi<sup>™</sup></span>
             <img src="assets/logo.svg" alt="VakeelSathi" class="logo-img">
         </div>
+        <div class="nav-links">
+            <a href="#practice-areas">Practice Areas</a>
+            <a href="#guides">Legal Guides</a>
+            <button type="button" class="nav-cta" data-service="other" data-label="General Legal Query">Talk to a Lawyer</button>
+        </div>
         <div class="coming-soon-badge"><span class="coming-soon-dot"></span>App Coming Soon</div>
     </nav>
 
@@ -361,6 +366,47 @@
                 WhatsApp Us
             </a>
         </div>
+        <form class="find-help" id="find-help">
+            <label for="find-service" class="sr-only">What do you need help with?</label>
+            <select id="find-service" required>
+                <option value="" disabled selected>What do you need help with?</option>
+                <optgroup label="Cheque Bounce &amp; Money Recovery">
+                    <option value="cheque-bounce-notice">Cheque Bounce Notice (Sec 138)</option>
+                    <option value="legal-notice-money-recovery">Legal Notice (Money Recovery)</option>
+                    <option value="reply-to-legal-notice">Reply to Legal Notice</option>
+                </optgroup>
+                <optgroup label="Property &amp; Real Estate">
+                    <option value="rent-agreement-drafting">Rent Agreement Drafting</option>
+                    <option value="sale-deed-review">Sale Deed Review</option>
+                    <option value="property-title-verification">Property Title Verification</option>
+                </optgroup>
+                <optgroup label="Family &amp; Marriage">
+                    <option value="mutual-divorce-petition">Mutual Divorce Petition</option>
+                    <option value="marriage-registration">Marriage Registration</option>
+                    <option value="will-drafting">Will Drafting</option>
+                </optgroup>
+                <optgroup label="Business &amp; Startup">
+                    <option value="startup-incorporation-pvt-ltd">Startup Incorporation (Pvt Ltd)</option>
+                    <option value="startup-establishment">Startup Establishment</option>
+                    <option value="co-founder-agreement">Co-founder Agreement</option>
+                    <option value="employment-contract-offer-letter">Employment Contract / Offer Letter</option>
+                    <option value="gst-registration">GST Registration</option>
+                    <option value="msme-registration">MSME Registration</option>
+                    <option value="pancard-registration">PAN Card Registration</option>
+                </optgroup>
+                <optgroup label="Consumer, Traffic &amp; Accident">
+                    <option value="consumer-complaint-filing">Consumer Complaint Filing</option>
+                    <option value="e-challan-dispute-filing">e-Challan Dispute Filing</option>
+                    <option value="mact-accident-claim">MACT Claim (Accident Compensation)</option>
+                </optgroup>
+                <optgroup label="Cyber Fraud &amp; Banking">
+                    <option value="cyber-fraud-complaint">Cyber Fraud Complaint</option>
+                    <option value="bank-account-unfreezing">Bank Account Unfreezing Help</option>
+                </optgroup>
+                <option value="other">Something else</option>
+            </select>
+            <button type="submit" class="btn">Get Help</button>
+        </form>
         <div class="trust-bar">
             <span class="trust-badge"><svg aria-hidden="true"><use href="#icon-check"></use></svg>Lawyer-Vetted Network</span>
             <span class="trust-badge"><svg aria-hidden="true"><use href="#icon-chat"></use></svg>Real Human Support</span>
@@ -610,6 +656,66 @@
         </div>
     </section>
 
+    <!-- Browse by practice area -->
+    <section class="home-section" id="practice-areas">
+        <h2 class="section-title">Browse by Practice Area</h2>
+        <div class="area-grid">
+            <a class="area-card" href="cheque-bounce-lawyer.html">
+                <svg aria-hidden="true"><use href="#icon-cheque"></use></svg>
+                <strong>Cheque Bounce &amp; Money Recovery</strong>
+                <span>Cheque bounce notices, money recovery and replies to legal notices.</span>
+            </a>
+            <a class="area-card" href="property-lawyer.html">
+                <svg aria-hidden="true"><use href="#icon-rent-agreement"></use></svg>
+                <strong>Property &amp; Real Estate</strong>
+                <span>Rent agreements, sale deed review and title verification.</span>
+            </a>
+            <a class="area-card" href="family-lawyer.html">
+                <svg aria-hidden="true"><use href="#icon-divorce"></use></svg>
+                <strong>Family &amp; Marriage</strong>
+                <span>Mutual divorce, marriage registration and wills.</span>
+            </a>
+            <a class="area-card" href="business-startup-lawyer.html">
+                <svg aria-hidden="true"><use href="#icon-startup-incorporation"></use></svg>
+                <strong>Business &amp; Startup</strong>
+                <span>Incorporation, GST, MSME, PAN and founder contracts.</span>
+            </a>
+            <a class="area-card" href="consumer-accident-lawyer.html">
+                <svg aria-hidden="true"><use href="#icon-consumer-complaint"></use></svg>
+                <strong>Consumer, Traffic &amp; Accident</strong>
+                <span>Consumer complaints, e-challans and MACT claims.</span>
+            </a>
+            <a class="area-card" href="cyber-fraud-lawyer.html">
+                <svg aria-hidden="true"><use href="#icon-title-verification"></use></svg>
+                <strong>Cyber Fraud &amp; Banking</strong>
+                <span>Online fraud complaints and frozen bank accounts.</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Legal guides -->
+    <section class="home-section" id="guides">
+        <h2 class="section-title">Legal Guides</h2>
+        <p class="section-sub">Plain-language explainers on common legal problems in India.</p>
+        <div class="guide-grid">
+            <a class="guide-card" href="guide-cheque-bounce-section-138.html">
+                <strong>Cheque Bounce under Section 138: Step-by-Step</strong>
+                <span>The 30-day, 15-day and one-month deadlines, and what to keep ready.</span>
+                <span class="guide-card-more">Read guide &rarr;</span>
+            </a>
+            <a class="guide-card" href="guide-mutual-consent-divorce.html">
+                <strong>Mutual Consent Divorce in India: The Process</strong>
+                <span>Eligibility, the two motions and the cooling-off period.</span>
+                <span class="guide-card-more">Read guide &rarr;</span>
+            </a>
+            <a class="guide-card" href="guide-cyber-fraud-what-to-do.html">
+                <strong>Lost Money to Online Fraud? What to Do First</strong>
+                <span>Call 1930, report online, inform your bank and keep evidence.</span>
+                <span class="guide-card-more">Read guide &rarr;</span>
+            </a>
+        </div>
+    </section>
+
     <!-- Launch Offer -->
     <section>
         <div class="launch-offer">
@@ -634,7 +740,23 @@
                 <span class="logo-text">VakeelSathi<sup>™</sup></span>
                 <p>Connecting you with verified lawyers across India. आपका कानूनी साथी</p>
             </div>
-            <nav class="footer-links" aria-label="Legal and contact">
+            <nav class="footer-col footer-menu" aria-label="Practice areas">
+                <h3>Practice Areas</h3>
+                <a href="cheque-bounce-lawyer.html">Cheque Bounce &amp; Money Recovery</a>
+                <a href="property-lawyer.html">Property &amp; Real Estate</a>
+                <a href="family-lawyer.html">Family &amp; Marriage</a>
+                <a href="business-startup-lawyer.html">Business &amp; Startup</a>
+                <a href="consumer-accident-lawyer.html">Consumer, Traffic &amp; Accident</a>
+                <a href="cyber-fraud-lawyer.html">Cyber Fraud &amp; Banking</a>
+            </nav>
+            <nav class="footer-col footer-menu" aria-label="Legal guides">
+                <h3>Legal Guides</h3>
+                <a href="guide-cheque-bounce-section-138.html">Cheque Bounce under Section 138: Step-by-Step</a>
+                <a href="guide-mutual-consent-divorce.html">Mutual Consent Divorce in India: The Process</a>
+                <a href="guide-cyber-fraud-what-to-do.html">Lost Money to Online Fraud? What to Do First</a>
+            </nav>
+            <nav class="footer-col footer-menu" aria-label="Legal and contact">
+                <h3>Company</h3>
                 <a href="privacy.html">Privacy Policy</a>
                 <a href="terms.html">Terms of Service</a>
                 <a href="delete-account.html">Delete Account</a>
@@ -642,6 +764,7 @@
                 <a href="mailto:support@vakeelsathi.in">support@vakeelsathi.in</a>
             </nav>
         </div>
+        <p class="footer-disclaimer">VakeelSathi is a technology platform that helps people get in touch with independent advocates. VakeelSathi is not a law firm and does not itself provide legal advice. Information on this website is general information only, is not legal advice, and is not intended as advertising or solicitation by any advocate. Please consult a qualified advocate about your specific situation.</p>
         <div class="footer-bottom">
             <p>© 2026 VakeelSathi. Made in India.</p>
         </div>
@@ -693,11 +816,27 @@
             if (window.turnstile) window.turnstile.reset("turnstile-widget");
         }
 
-        document.querySelectorAll(".service-card, .hero-cta").forEach((card) => {
+        document.querySelectorAll(".service-card, .hero-cta, .nav-cta").forEach((card) => {
             card.addEventListener("click", () => {
                 openModal(card.dataset.service, card.dataset.label);
             });
         });
+
+        // Hero help picker opens the same modal for the chosen service.
+        const findService = document.getElementById("find-service");
+        document.getElementById("find-help").addEventListener("submit", (event) => {
+            event.preventDefault();
+            const option = findService.selectedOptions[0];
+            if (option && option.value) openModal(option.value, option.textContent);
+        });
+
+        // Practice-area and guide pages link here as ?service=<slug> to open the form directly.
+        const linkedService = new URLSearchParams(location.search).get("service");
+        const linkedOption = linkedService && [...serviceSelect.options].find((o) => o.value === linkedService);
+        if (linkedOption) {
+            openModal(linkedOption.value, linkedOption.value === "other" ? "General Legal Query" : linkedOption.textContent);
+            history.replaceState(null, "", location.pathname);
+        }
 
         modalClose.addEventListener("click", closeModal);
         document.getElementById("modal-success-close").addEventListener("click", closeModal);
