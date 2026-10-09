@@ -340,6 +340,10 @@
         <div class="nav-links">
             <a href="#practice-areas">Practice Areas</a>
             <a href="#guides">Legal Guides</a>
+            <a href="https://wa.me/918492082250?text=Hi%2C%20I%20have%20a%20legal%20query" target="_blank" rel="noopener" class="nav-whatsapp" aria-label="WhatsApp Us">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"></path></svg>
+                <span>WhatsApp Us</span>
+            </a>
             <button type="button" class="nav-cta" data-service="other" data-label="General Legal Query">Talk to a Lawyer</button>
         </div>
         <div class="coming-soon-badge"><span class="coming-soon-dot"></span>App Coming Soon</div>
@@ -347,13 +351,6 @@
 
     <div class="page-intro">
         <h1>Talk to a Lawyer Online in India</h1>
-        <div class="hero-actions">
-            <button type="button" class="btn hero-cta" data-service="other" data-label="General Legal Query">Get Legal Help</button>
-            <a href="https://wa.me/918492082250?text=Hi%2C%20I%20have%20a%20legal%20query" target="_blank" rel="noopener" class="btn whatsapp-cta">
-                <svg aria-hidden="true"><use href="#icon-chat"></use></svg>
-                WhatsApp Us
-            </a>
-        </div>
         <form class="find-help" id="find-help">
             <label for="find-service" class="sr-only">What do you need help with?</label>
             <select id="find-service" required>
@@ -786,7 +783,7 @@
             if (window.turnstile) window.turnstile.reset("turnstile-widget");
         }
 
-        document.querySelectorAll(".service-card, .hero-cta, .nav-cta").forEach((card) => {
+        document.querySelectorAll(".service-card, .nav-cta").forEach((card) => {
             card.addEventListener("click", () => {
                 openModal(card.dataset.service, card.dataset.label);
             });

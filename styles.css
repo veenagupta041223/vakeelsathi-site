@@ -387,10 +387,6 @@ body.modal-open {
     margin-top: 0;
 }
 
-.hero-cta {
-    animation: fadeInUp 0.7s ease 0.15s both, ctaPulse 2.4s ease-in-out 1.4s infinite;
-}
-
 .whatsapp-cta {
     display: inline-flex;
     align-items: center;
@@ -653,7 +649,6 @@ footer a:hover {
 
 @media (prefers-reduced-motion: reduce) {
     .page-intro h1,
-    .hero-cta,
     .whatsapp-cta,
     .modal-overlay:not([hidden]),
     .modal-box,
@@ -971,18 +966,19 @@ a.service-card {
 @media (max-width: 768px) {
     .nav-links {
         margin: 0;
-        gap: 14px;
+        gap: 8px 8px;
+        flex-wrap: wrap;
         justify-content: center;
     }
 
     .nav-links a,
     .nav-links button {
-        font-size: 14px;
+        font-size: 13.5px;
         white-space: nowrap;
     }
 
     .nav-cta {
-        padding: 8px 14px;
+        padding: 8px 12px;
     }
 
     /* Keep the sticky header short on phones */
@@ -1024,4 +1020,61 @@ a.service-card {
     line-height: 1.5;
     color: var(--ink-muted);
     margin-top: 6px;
+}
+
+/* Header WhatsApp button */
+.nav-links .nav-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #25D366;
+    color: #FFFFFF;
+    padding: 10px 16px;
+    border-radius: 999px;
+}
+
+.nav-links .nav-whatsapp:hover {
+    background: #1DA851;
+    color: #FFFFFF;
+}
+
+.nav-whatsapp svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    /* Icon-only on phones so the header stays on one row */
+    .nav-links .nav-whatsapp {
+        padding: 8px 10px;
+    }
+
+    .nav-whatsapp span {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Phones: keep the header to WhatsApp + Talk to a Lawyer; section links stay in the page and footer */
+    .nav-links a:not(.nav-whatsapp):not(.nav-cta) {
+        display: none;
+    }
+
+    .nav-links .nav-whatsapp {
+        padding: 8px 14px;
+    }
+
+    .nav-whatsapp span {
+        position: static;
+        width: auto;
+        height: auto;
+        overflow: visible;
+        clip: auto;
+    }
 }
