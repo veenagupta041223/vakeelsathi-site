@@ -230,6 +230,14 @@
             defaults: '2025-05-24',
         })
     </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17638829624"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag("js", new Date());
+        gtag("config", "AW-17638829624");
+    </script>
 </head>
 <body>
     <!-- Icon sprite: shared line-icon shapes used by the service and trust cards -->
@@ -765,6 +773,8 @@
                 if (response.ok && data.ok) {
                     document.getElementById("modal-form-view").hidden = true;
                     document.getElementById("modal-success-view").hidden = false;
+                    // Google Ads "Submit lead form" conversion — fires here because success is an in-page modal, not a redirect.
+                    if (window.gtag) gtag("event", "conversion", { send_to: "AW-17638829624/wvTUCJ6gwq4bELjc7NpB" });
                     return;
                 }
 
