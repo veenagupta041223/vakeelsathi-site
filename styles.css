@@ -523,42 +523,6 @@ body.modal-open {
     line-height: 1.5;
 }
 
-/* Launch Offer */
-.launch-offer {
-    background: var(--panel);
-    border: 1px solid var(--rule);
-    border-left: 4px solid var(--brass);
-    border-radius: var(--radius-lg);
-    padding: 40px;
-    text-align: left;
-    margin: 72px auto 0;
-    max-width: 1180px;
-}
-
-.launch-offer h3 {
-    font-size: 26px;
-    margin-bottom: 14px;
-}
-
-.launch-offer p {
-    font-size: 17px;
-    line-height: 1.7;
-    color: var(--ink-muted);
-    margin-bottom: 22px;
-}
-
-.launch-offer .offer-note {
-    font-size: 13px;
-    margin-top: -12px;
-}
-
-.launch-offer .btn {
-    margin-top: 0;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-}
-
 /* Footer */
 footer {
     background: var(--ink);
@@ -703,10 +667,6 @@ footer a:hover {
         padding: 28px 20px 32px;
     }
 
-    .launch-offer {
-        margin: 48px 20px 0;
-        padding: 28px 24px;
-    }
 
     .footer-grid {
         flex-direction: column;

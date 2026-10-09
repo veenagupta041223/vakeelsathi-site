@@ -716,24 +716,6 @@
         </div>
     </section>
 
-    <!-- Launch Offer -->
-    <section>
-        <div class="launch-offer">
-            <h3>Early Bird Special</h3>
-            <p>Follow us on Instagram for exclusive updates and get <strong>20% off VakeelSathi's platform fee</strong> on your first request when we launch!</p>
-            <p class="offer-note">The discount applies only to VakeelSathi's own platform fee. Advocates' professional fees are set independently by the advocates and are not discounted.</p>
-            <a href="https://www.instagram.com/vakeel_sathii?igsh=MW1pNGJ2YWFrb3RhYw==" target="_blank" class="btn">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                </svg>
-                Follow on Instagram
-            </a>
-        </div>
-    </section>
-
-
     <!-- Footer -->
     <footer>
         <div class="footer-grid">
@@ -941,7 +923,7 @@
                 });
             }, { threshold: 0.15 });
 
-            document.querySelectorAll(".service-card, .launch-offer").forEach((el) => {
+            document.querySelectorAll(".service-card").forEach((el) => {
                 el.classList.add("reveal");
                 revealObserver.observe(el);
             });
