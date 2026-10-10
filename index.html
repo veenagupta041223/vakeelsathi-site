@@ -13,7 +13,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Zilla+Slab:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
     <!-- Open Graph / Social Sharing -->
     <meta property="og:type" content="website">
@@ -346,16 +345,16 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"></path></svg>
                 <span>WhatsApp Us</span>
             </a>
-            <button type="button" class="nav-cta" data-service="other" data-label="General Legal Query">Talk to a Lawyer</button>
+            <a href="get-help.html?service=other" class="nav-cta">Talk to a Lawyer</a>
             <div class="coming-soon-badge"><span class="coming-soon-dot"></span>App Coming Soon</div>
         </div>
     </nav>
 
     <div class="page-intro">
         <h1>Talk to a Lawyer Online in India</h1>
-        <form class="find-help" id="find-help">
+        <form class="find-help" id="find-help" action="get-help.html">
             <label for="find-service" class="sr-only">What do you need help with?</label>
-            <select id="find-service" required>
+            <select id="find-service" name="service" required>
                 <option value="" disabled selected>What do you need help with?</option>
                 <optgroup label="Cheque Bounce &amp; Money Recovery">
                     <option value="cheque-bounce-notice">Cheque Bounce Notice (Sec 138)</option>
@@ -396,245 +395,157 @@
         </form>
     </div>
 
-    <!-- Query modal: opened by clicking any service card below -->
-    <div class="modal-overlay" id="query-modal" hidden>
-        <div class="hero-form-card modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-            <button type="button" class="modal-close" id="modal-close" aria-label="Close">&times;</button>
-
-            <div id="modal-form-view">
-            <h2 id="modal-title">Have a Query? Let Us Know</h2>
-            <p class="services-intro">Tell us what you need help with — our team will review your request and get in touch with you directly.</p>
-
-            <form class="intake-form" id="intake-form" novalidate>
-                <div class="form-field">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" maxlength="100" required>
-                </div>
-
-                <div class="form-field">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" pattern="[6-9]\d{9}" maxlength="10" placeholder="10-digit mobile number" required>
-                </div>
-
-                <div class="form-field" id="service-field-group">
-                    <label for="service">Service Needed</label>
-                    <select id="service" name="service" required>
-                        <option value="" disabled selected>Select a service</option>
-                        <option value="cheque-bounce-notice">Cheque Bounce Notice (Sec 138)</option>
-                        <option value="legal-notice-money-recovery">Legal Notice (Money Recovery)</option>
-                        <option value="reply-to-legal-notice">Reply to Legal Notice</option>
-                        <option value="rent-agreement-drafting">Rent Agreement Drafting</option>
-                        <option value="sale-deed-review">Sale Deed Review</option>
-                        <option value="property-title-verification">Property Title Verification</option>
-                        <option value="will-drafting">Will Drafting</option>
-                        <option value="mutual-divorce-petition">Mutual Divorce Petition</option>
-                        <option value="employment-contract-offer-letter">Employment Contract / Offer Letter</option>
-                        <option value="co-founder-agreement">Co-founder Agreement</option>
-                        <option value="startup-incorporation-pvt-ltd">Startup Incorporation (Pvt Ltd)</option>
-                        <option value="startup-establishment">Startup Establishment</option>
-                        <option value="gst-registration">GST Registration</option>
-                        <option value="msme-registration">MSME Registration</option>
-                        <option value="pancard-registration">PAN Card Registration</option>
-                        <option value="consumer-complaint-filing">Consumer Complaint Filing</option>
-                        <option value="e-challan-dispute-filing">e-Challan Dispute Filing</option>
-                        <option value="mact-accident-claim">MACT Claim (Accident Compensation)</option>
-                        <option value="cyber-fraud-complaint">Cyber Fraud Complaint</option>
-                        <option value="bank-account-unfreezing">Bank Account Unfreezing Help</option>
-                        <option value="marriage-registration">Marriage Registration</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-
-                <p class="form-service-summary" id="service-summary" hidden>
-                    Requesting: <strong id="service-summary-text"></strong>
-                </p>
-
-                <div class="form-field">
-                    <label for="message" id="message-label">Briefly Describe Your Issue (Optional)</label>
-                    <textarea id="message" name="message" rows="4" maxlength="1000" placeholder="If you selected 'Other', please tell us what you need help with." aria-describedby="message-hint"></textarea>
-                    <p class="form-hint" id="message-hint">Share only what we need to understand your request. Please don't include confidential documents, Aadhaar or PAN numbers, bank or card details, or passwords.</p>
-                </div>
-
-                <!-- Honeypot: hidden from real visitors via CSS; bots tend to fill every field -->
-                <div class="hp-field" aria-hidden="true">
-                    <label for="hp">Leave this field empty</label>
-                    <input type="text" id="hp" name="hp" tabindex="-1" autocomplete="off">
-                </div>
-
-                <div class="form-field form-consent">
-                    <label>
-                        <input type="checkbox" id="consent" name="consent" required>
-                        <span>I confirm I am 18 or older. I agree to the <a href="privacy.html" target="_blank">Privacy Policy</a> and <a href="terms.html" target="_blank">Terms of Service</a>, and consent to VakeelSathi storing my details, contacting me about this request, and sharing them with an independent advocate to help with it.</span>
-                    </label>
-                </div>
-
-                <div class="cf-turnstile" id="turnstile-widget" data-sitekey="0x4AAAAAAEy2AUf7qgK6m41D"></div>
-
-                <p class="form-error" id="form-error" role="alert" hidden></p>
-
-                <button type="submit" class="btn" id="submit-btn">Submit Request</button>
-            </form>
-            </div>
-
-            <div id="modal-success-view" hidden>
-                <h2>We've got your request</h2>
-                <p class="services-intro">Thanks for reaching out — our team will review your request and get in touch with you directly.</p>
-                <button type="button" class="btn" id="modal-success-close">Close</button>
-            </div>
-        </div>
-    </div>
-
     <!-- Explore Services -->
     <section class="services-section" id="explore-services">
         <h2 class="sr-only">Explore Our Legal Services</h2>
         <div class="service-grid">
-            <button type="button" class="service-card" data-service="cheque-bounce-notice" data-label="Cheque Bounce Notice (Sec 138)">
+            <a class="service-card" href="get-help.html?service=cheque-bounce-notice">
                 <img class="service-card-photo" src="assets/services/cheque-bounce-notice.jpg" alt="Cheque Bounce Notice (Sec 138) — VakeelSathi legal service">
                 <span class="service-card-body">
                     <strong>Cheque Bounce Notice (Sec 138)</strong>
                     <span>Send a formal notice when someone's cheque to you has bounced.</span>
                 </span>
-            </button>
-            <button type="button" class="service-card" data-service="legal-notice-money-recovery" data-label="Legal Notice for Money Recovery">
+            </a>
+            <a class="service-card" href="get-help.html?service=legal-notice-money-recovery">
                 <img class="service-card-photo" src="assets/services/legal-notice-money-recovery.jpg" alt="Legal Notice for Money Recovery — VakeelSathi legal service">
                 <span class="service-card-body">
                     <strong>Legal Notice for Money Recovery</strong>
                     <span>Recover money owed to you with a formal legal notice.</span>
                 </span>
-            </button>
-            <button type="button" class="service-card" data-service="reply-to-legal-notice" data-label="Reply to a Legal Notice">
+            </a>
+            <a class="service-card" href="get-help.html?service=reply-to-legal-notice">
                 <img class="service-card-photo" src="assets/services/reply-to-legal-notice.jpg" alt="Reply to a Legal Notice — VakeelSathi legal service">
                 <span class="service-card-body">
                     <strong>Reply to a Legal Notice</strong>
                     <span>Get help drafting a proper response to a notice you've received.</span>
                 </span>
-            </button>
-            <button type="button" class="service-card" data-service="rent-agreement-drafting" data-label="Rent Agreement Drafting">
+            </a>
+            <a class="service-card" href="get-help.html?service=rent-agreement-drafting">
                 <img class="service-card-photo" src="assets/services/rent-agreement-drafting.jpg" alt="Rent Agreement Drafting — VakeelSathi legal service">
                 <span class="service-card-body">
                     <strong>Rent Agreement Drafting</strong>
                     <span>A clear, enforceable rental agreement for landlords and tenants.</span>
                 </span>
-            </button>
-            <button type="button" class="service-card" data-service="sale-deed-review" data-label="Sale Deed Review">
+            </a>
+            <a class="service-card" href="get-help.html?service=sale-deed-review">
                 <img class="service-card-photo" src="assets/services/sale-deed-review.jpg" alt="Sale Deed Review — VakeelSathi legal service">
                 <span class="service-card-body">
                     <strong>Sale Deed Review</strong>
                     <span>Have a property sale deed checked before you sign.</span>
                 </span>
-            </button>
-            <button type="button" class="service-card" data-service="property-title-verification" data-label="Property Title Verification">
+            </a>
+            <a class="service-card" href="get-help.html?service=property-title-verification">
                 <img class="service-card-photo" src="assets/services/property-title-verification.jpg" alt="Property Title Verification — VakeelSathi legal service">
                 <span class="service-card-body">
                     <strong>Property Title Verification</strong>
                     <span>Confirm a property's ownership and legal history before buying.</span>
                 </span>
-            </button>
-            <button type="button" class="service-card" data-service="will-drafting" data-label="Will Drafting">
+            </a>
+            <a class="service-card" href="get-help.html?service=will-drafting">
                 <img class="service-card-photo" src="assets/services/will-drafting.jpg" alt="Will Drafting — VakeelSathi legal service">
                 <span class="service-card-body">
                     <strong>Will Drafting</strong>
                     <span>Put your wishes in writing with a legally sound will.</span>
                 </span>
-            </button>
-            <button type="button" class="service-card" data-service="marriage-registration" data-label="Marriage Registration">
+            </a>
+            <a class="service-card" href="get-help.html?service=marriage-registration">
                 <img class="service-card-photo" src="assets/services/marriage-registration.jpg" alt="Marriage Registration — VakeelSathi legal service">
                 <span class="service-card-body">
                     <strong>Marriage Registration</strong>
                     <span>Register your marriage and get your official marriage certificate.</span>
                 </span>
-            </button>
-            <button type="button" class="service-card" data-service="mutual-divorce-petition" data-label="Mutual Divorce Petition">
+            </a>
+            <a class="service-card" href="get-help.html?service=mutual-divorce-petition">
                 <img class="service-card-photo" src="assets/services/mutual-divorce-petition.jpg" alt="Mutual Divorce Petition — VakeelSathi legal service">
                 <span class="service-card-body">
                     <strong>Mutual Divorce Petition</strong>
                     <span>File for divorce by mutual consent with proper documentation.</span>
                 </span>
-            </button>
-            <button type="button" class="service-card" data-service="employment-contract-offer-letter" data-label="Employment Contract / Offer Letter">
+            </a>
+            <a class="service-card" href="get-help.html?service=employment-contract-offer-letter">
                 <img class="service-card-photo" src="assets/services/employment-contract-offer-letter.jpg" alt="Employment Contract / Offer Letter — VakeelSathi legal service">
                 <span class="service-card-body">
                     <strong>Employment Contract / Offer Letter</strong>
                     <span>Draft a fair, compliant offer letter or employment contract.</span>
                 </span>
-            </button>
-            <button type="button" class="service-card" data-service="co-founder-agreement" data-label="Co-founder Agreement">
+            </a>
+            <a class="service-card" href="get-help.html?service=co-founder-agreement">
                 <img class="service-card-photo" src="assets/services/co-founder-agreement.jpg" alt="Co-founder Agreement — VakeelSathi legal service">
                 <span class="service-card-body">
                     <strong>Co-founder Agreement</strong>
                     <span>Set clear terms between co-founders before disputes arise.</span>
                 </span>
-            </button>
-            <button type="button" class="service-card" data-service="startup-incorporation-pvt-ltd" data-label="Startup Incorporation (Pvt Ltd)">
+            </a>
+            <a class="service-card" href="get-help.html?service=startup-incorporation-pvt-ltd">
                 <img class="service-card-photo" src="assets/services/startup-incorporation-pvt-ltd.jpg" alt="Startup Incorporation (Pvt Ltd) — VakeelSathi legal service">
                 <span class="service-card-body">
                     <strong>Startup Incorporation (Pvt Ltd)</strong>
                     <span>Register your company as a Private Limited entity.</span>
                 </span>
-            </button>
-            <button type="button" class="service-card" data-service="startup-establishment" data-label="Startup Establishment">
+            </a>
+            <a class="service-card" href="get-help.html?service=startup-establishment">
                 <img class="service-card-photo" src="assets/services/startup-establishment.jpg" alt="Startup Establishment — VakeelSathi legal service">
                 <span class="service-card-body">
                     <strong>Startup Establishment</strong>
                     <span>End-to-end help setting up your new business the right way.</span>
                 </span>
-            </button>
-            <button type="button" class="service-card" data-service="gst-registration" data-label="GST Registration">
+            </a>
+            <a class="service-card" href="get-help.html?service=gst-registration">
                 <img class="service-card-photo" src="assets/services/gst-registration.jpg" alt="GST Registration — VakeelSathi legal service">
                 <span class="service-card-body">
                     <strong>GST Registration</strong>
                     <span>Get registered for GST and stay compliant from day one.</span>
                 </span>
-            </button>
-            <button type="button" class="service-card" data-service="msme-registration" data-label="MSME Registration">
+            </a>
+            <a class="service-card" href="get-help.html?service=msme-registration">
                 <img class="service-card-photo" src="assets/services/msme-registration.jpg" alt="MSME Registration — VakeelSathi legal service">
                 <span class="service-card-body">
                     <strong>MSME Registration</strong>
                     <span>Register your business as an MSME for available benefits.</span>
                 </span>
-            </button>
-            <button type="button" class="service-card" data-service="pancard-registration" data-label="PAN Card Registration">
+            </a>
+            <a class="service-card" href="get-help.html?service=pancard-registration">
                 <img class="service-card-photo" src="assets/services/pancard-registration.jpg" alt="PAN Card Registration — VakeelSathi legal service">
                 <span class="service-card-body">
                     <strong>PAN Card Registration</strong>
                     <span>Apply for a new PAN card or correct an existing one.</span>
                 </span>
-            </button>
-            <button type="button" class="service-card" data-service="consumer-complaint-filing" data-label="Consumer Complaint Filing">
+            </a>
+            <a class="service-card" href="get-help.html?service=consumer-complaint-filing">
                 <img class="service-card-photo" src="assets/services/consumer-complaint-filing.jpg" alt="Consumer Complaint Filing — VakeelSathi legal service">
                 <span class="service-card-body">
                     <strong>Consumer Complaint Filing</strong>
                     <span>File a complaint against a faulty product or service.</span>
                 </span>
-            </button>
-            <button type="button" class="service-card" data-service="e-challan-dispute-filing" data-label="e-Challan Dispute Filing">
+            </a>
+            <a class="service-card" href="get-help.html?service=e-challan-dispute-filing">
                 <img class="service-card-photo" src="assets/services/e-challan-dispute-filing.jpg" alt="e-Challan Dispute Filing — VakeelSathi legal service">
                 <span class="service-card-body">
                     <strong>e-Challan Dispute Filing</strong>
                     <span>Contest a traffic e-challan you believe was issued unfairly.</span>
                 </span>
-            </button>
-            <button type="button" class="service-card" data-service="mact-accident-claim" data-label="MACT Claim (Accident Compensation)">
+            </a>
+            <a class="service-card" href="get-help.html?service=mact-accident-claim">
                 <img class="service-card-photo" src="assets/services/mact-accident-claim.jpg" alt="MACT Claim (Accident Compensation) — VakeelSathi legal service">
                 <span class="service-card-body">
                     <strong>MACT Claim (Accident Compensation)</strong>
                     <span>File for compensation after a motor accident injury or loss.</span>
                 </span>
-            </button>
-            <button type="button" class="service-card" data-service="cyber-fraud-complaint" data-label="Cyber Fraud Complaint">
+            </a>
+            <a class="service-card" href="get-help.html?service=cyber-fraud-complaint">
                 <img class="service-card-photo" src="assets/services/cyber-fraud-complaint.jpg" alt="Cyber Fraud Complaint — VakeelSathi legal service">
                 <span class="service-card-body">
                     <strong>Cyber Fraud Complaint</strong>
                     <span>Report online fraud, phishing, or OTP scams and get help recovering your money.</span>
                 </span>
-            </button>
-            <button type="button" class="service-card" data-service="bank-account-unfreezing" data-label="Bank Account Unfreezing Help">
+            </a>
+            <a class="service-card" href="get-help.html?service=bank-account-unfreezing">
                 <img class="service-card-photo" src="assets/services/bank-account-unfreezing.jpg" alt="Bank Account Unfreezing Help — VakeelSathi legal service">
                 <span class="service-card-body">
                     <strong>Bank Account Unfreezing Help</strong>
                     <span>Get legal help to unblock a frozen bank account.</span>
                 </span>
-            </button>
+            </a>
         </div>
     </section>
 
@@ -739,163 +650,9 @@
         </div>
     </footer>
 
-    <!-- Service Intake Form Script -->
     <script>
-        const SERVICE_ENDPOINT = "https://vakeelsathi-leads.administrator-ddd.workers.dev/submit";
-
-        const form = document.getElementById("intake-form");
-        const errorBox = document.getElementById("form-error");
-        const submitBtn = document.getElementById("submit-btn");
-        const serviceSelect = document.getElementById("service");
-        const messageLabel = document.getElementById("message-label");
-
-        serviceSelect.addEventListener("change", () => {
-            messageLabel.textContent = serviceSelect.value === "other"
-                ? "Briefly Describe Your Issue (Required for 'Other')"
-                : "Briefly Describe Your Issue (Optional)";
-        });
-
-        // Service cards open the query modal with that service pre-selected
-        // (dropdown hidden) instead of showing the dropdown.
-        const serviceFieldGroup = document.getElementById("service-field-group");
-        const serviceSummary = document.getElementById("service-summary");
-        const serviceSummaryText = document.getElementById("service-summary-text");
-        const queryModal = document.getElementById("query-modal");
-        const modalClose = document.getElementById("modal-close");
-
-        function openModal(value, label) {
-            serviceSelect.value = value;
-            serviceSelect.dispatchEvent(new Event("change"));
-            serviceFieldGroup.hidden = true;
-            serviceSummaryText.textContent = label;
-            serviceSummary.hidden = false;
-            queryModal.hidden = false;
-            document.body.classList.add("modal-open");
-            document.getElementById("name").focus();
-        }
-
-        function closeModal() {
-            queryModal.hidden = true;
-            document.body.classList.remove("modal-open");
-            // Reset to the form view and clear it, ready for the next open.
-            document.getElementById("modal-success-view").hidden = true;
-            document.getElementById("modal-form-view").hidden = false;
-            form.reset();
-            clearError();
-            if (window.turnstile) window.turnstile.reset("turnstile-widget");
-        }
-
-        document.querySelectorAll(".service-card, .nav-cta").forEach((card) => {
-            card.addEventListener("click", () => {
-                openModal(card.dataset.service, card.dataset.label);
-            });
-        });
-
-        // Hero help picker opens the same modal for the chosen service.
-        const findService = document.getElementById("find-service");
-        document.getElementById("find-help").addEventListener("submit", (event) => {
-            event.preventDefault();
-            const option = findService.selectedOptions[0];
-            if (option && option.value) openModal(option.value, option.textContent);
-        });
-
-        // Practice-area and guide pages link here as ?service=<slug> to open the form directly.
-        const linkedService = new URLSearchParams(location.search).get("service");
-        const linkedOption = linkedService && [...serviceSelect.options].find((o) => o.value === linkedService);
-        if (linkedOption) {
-            openModal(linkedOption.value, linkedOption.value === "other" ? "General Legal Query" : linkedOption.textContent);
-            history.replaceState(null, "", location.pathname);
-        }
-
-        modalClose.addEventListener("click", closeModal);
-        document.getElementById("modal-success-close").addEventListener("click", closeModal);
-
-        queryModal.addEventListener("click", (event) => {
-            if (event.target === queryModal) closeModal();
-        });
-
-        document.addEventListener("keydown", (event) => {
-            if (event.key === "Escape" && !queryModal.hidden) closeModal();
-        });
-
-        function showError(message) {
-            errorBox.textContent = message;
-            errorBox.hidden = false;
-        }
-
-        function clearError() {
-            errorBox.hidden = true;
-            errorBox.textContent = "";
-        }
-
-        form.addEventListener("submit", async (event) => {
-            event.preventDefault();
-            clearError();
-
-            const name = document.getElementById("name").value.trim();
-            const phone = document.getElementById("phone").value.trim();
-            const service = document.getElementById("service").value;
-            const message = document.getElementById("message").value.trim();
-            const consent = document.getElementById("consent").checked;
-            const hp = document.getElementById("hp").value;
-
-            if (!name) {
-                showError("Please enter your name.");
-                return;
-            }
-            if (!/^[6-9]\d{9}$/.test(phone)) {
-                showError("Please enter a valid 10-digit phone number.");
-                return;
-            }
-            if (!service) {
-                showError("Please select a legal service.");
-                return;
-            }
-            if (service === "other" && !message) {
-                showError("Please describe your issue so we know how to help.");
-                return;
-            }
-            if (!consent) {
-                showError("Please confirm you are 18 or older and accept the Privacy Policy and Terms to continue.");
-                return;
-            }
-
-            const turnstileToken = document.querySelector('#turnstile-widget input[name="cf-turnstile-response"]')?.value || "";
-            if (!turnstileToken) {
-                showError("Please complete the verification challenge.");
-                return;
-            }
-
-            submitBtn.disabled = true;
-            submitBtn.textContent = "Submitting...";
-
-            try {
-                const response = await fetch(SERVICE_ENDPOINT, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ name, phone, service, message, consent, hp, "cf-turnstile-response": turnstileToken }),
-                });
-
-                const data = await response.json();
-
-                if (response.ok && data.ok) {
-                    document.getElementById("modal-form-view").hidden = true;
-                    document.getElementById("modal-success-view").hidden = false;
-                    // Google Ads "Submit lead form" conversion — fires here because success is an in-page modal, not a redirect.
-                    if (window.gtag) gtag("event", "conversion", { send_to: "AW-17638829624/wvTUCJ6gwq4bELjc7NpB" });
-                    return;
-                }
-
-                showError(data.error || "Something went wrong — please try again, or reach us at support@vakeelsathi.in");
-            } catch (err) {
-                showError("Something went wrong — please try again, or reach us at support@vakeelsathi.in");
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.textContent = "Submit Request";
-                // Turnstile tokens are single-use; reset so a retry gets a fresh one.
-                if (window.turnstile) window.turnstile.reset("turnstile-widget");
-            }
-        });
+        // Old links (ads, bookmarks) used index.html?service=<slug> to open the form; send them to the form page.
+        if (new URLSearchParams(location.search).has("service")) location.replace("get-help.html" + location.search);
 
         // Fade cards in as they scroll into view. Skipped entirely for reduced-motion
         // so those users never get an opacity:0 element stuck if something goes wrong.
